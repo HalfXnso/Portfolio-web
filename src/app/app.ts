@@ -17,7 +17,13 @@ import { Projects } from "./projects/projects";
 export class App {
   protected title = 'project';
 
-  openButtons() {
-    console.log("Click");
+  downloadCV() {
+    const link = document.createElement('a');
+    link.href = './CV Alfonso Gaitán Pérez.pdf';
+    link.download = 'CV Alfonso Gaitán Pérez.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 }
+

@@ -1,19 +1,36 @@
-
-<div class=" h-full w-[70%] overflow-hidden relative mb-[1%]
-            mask-[linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+<div class=" h-full mx-auto overflow-hidden relative mb-[1%]
+            mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
   <div class="flex w-max animate-scroll h-full items-center">
     @for (tecnologia of tecnologias; track $index) {
-    <div class="min-w-15 h-full flex items-center justify-center">
-      <img class="w-10  object-contain" src="{{tecnologia.url}}" alt="{{tecnologia.name}}" />
+    <div class="min-w-14 h-full flex items-center justify-center">
+      <img class="max-w-8  " src="{{tecnologia.url}}" alt="{{tecnologia.name}}" />
     </div>
     }
     @for (tecnologia of tecnologias; track $index) {
-    <div class="min-w-15 h-full flex items-center justify-center px-2">
-      <img class="w-10 object-contain" src="{{tecnologia.url}}" alt="{{tecnologia.name}}" />
+    <div class="min-w-14 h-full flex items-center justify-center px-2">
+      <img class="max-w-8 object-contain" src="{{tecnologia.url}}" alt="{{tecnologia.name}}" />
     </div>
     }
   </div>
 </div>
-<div class=" w-[20%] h-full rounded-md bg-white/30 flex items-center justify-end ">
- Ver más
-</div>
+<button onclick="my_modal_4.showModal()"
+  class="btn border-0 rounded-md z-1 bg-white/30 shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm">
+  +
+</button>
+<dialog id="my_modal_4" class="modal">
+  <div class="modal-box h-5/6">
+    <div method="dialog" class="modal-backdrop  text-black overflow-scroll p-2">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+      </form>
+      <h3 class="text-lg font-bold text-center">Uso del sitio web:</h3>
+      <p class="py-4">Este sitio web tiene un fin exclusivamente profesional y demostrativo. No
+        persigue ningún objetivo de monetización. Los proyectos aquí mostrados se utilizan únicamente como muestra de
+        mis
+        habilidades para la búsqueda de oportunidades laborales. Si algún contenido estuviera sujeto a licencia, no
+        existe
+        intención de uso comercial.</p>
+    </div>
+  </div>
+
+</dialog>
