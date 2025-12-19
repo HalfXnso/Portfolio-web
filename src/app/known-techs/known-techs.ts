@@ -1,12 +1,24 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-known-techs',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './known-techs.html',
   styleUrl: './known-techs.css',
 })
 export class KnownTechs {
+
+  categoriaSeleccionada = 'todos';
+
+  categorias = [
+    { titulo: 'Frontend', tipo: 'Frontend' },
+    { titulo: 'Backend', tipo: 'Backend' },
+    { titulo: 'Extra', tipo: 'Game Dev.' },
+    { titulo: 'IDE', tipo: 'IDE' }
+  ];
+
 
   tecnologias: Tecnologias[] = [
     // Frontend
@@ -35,12 +47,18 @@ export class KnownTechs {
     // IDE
     { id: 16, name: 'visual-studio', url: './techs/visual-studio-code-svgrepo-com.svg', tipo: 'IDE' },
     { id: 17, name: 'apache-netbeans', url: './techs/apache-netbeans.svg', tipo: 'IDE' },
+
   ];
+  getTechByTipo(tipo: string) {
+    if (tipo === 'todos') return this.tecnologias;
+    return this.tecnologias.filter(tech => tech.tipo === tipo);
+  }
 }
 export interface Tecnologias {
   id: number,
   name: string,
   url: string,
   tipo: string,
+
 
 }

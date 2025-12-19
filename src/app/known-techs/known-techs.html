@@ -23,13 +23,36 @@
       <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
       </form>
-      <h3 class="text-lg font-bold text-center">Uso del sitio web:</h3>
-      <p class="py-4">Este sitio web tiene un fin exclusivamente profesional y demostrativo. No
-        persigue ningún objetivo de monetización. Los proyectos aquí mostrados se utilizan únicamente como muestra de
-        mis
-        habilidades para la búsqueda de oportunidades laborales. Si algún contenido estuviera sujeto a licencia, no
-        existe
-        intención de uso comercial.</p>
+
+      <select class="select" [(ngModel)]="categoriaSeleccionada">
+        <option value="todos">Todos</option>
+        <option value="Frontend">Frontend</option>
+        <option value="Backend">Backend</option>
+        <option value="IDE">IDE</option>
+        <option value="Game Dev.">Game Dev.</option>
+
+      </select>
+
+      <!-- Mostrar según selección -->
+      @if (categoriaSeleccionada === 'todos') {
+      @for (categoria of categorias; track categoria.tipo) {
+      <h1>{{categoria.titulo}}</h1>
+      @for (tech of getTechByTipo(categoria.tipo); track tech.name) {
+      <div class="text-lg flex font-bold text-center">
+        {{tech.name}}
+        <img class="w-8" [src]="tech.url" [alt]="tech.name">
+      </div>
+      }
+      }
+      } @else {
+      <h1>{{categoriaSeleccionada}}</h1>
+      @for (tech of getTechByTipo(categoriaSeleccionada); track tech.name) {
+      <div class="text-lg flex font-bold text-center">
+        {{tech.name}}
+        <img class="w-8" [src]="tech.url" [alt]="tech.name">
+      </div>
+      }
+      }
     </div>
   </div>
 
