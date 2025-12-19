@@ -1,0 +1,15 @@
+<div class=" h-full mx-auto overflow-hidden relative mb-[1%]
+            [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+  <div class="flex w-max animate-scroll h-full items-center">
+    @for (tecnologia of tecnologias; track $index) {
+    <div class="min-w-[60px] h-full flex items-center justify-center">
+      <img class="w-[40px]  object-contain" src="{{tecnologia.url}}" alt="{{tecnologia.name}}" />
+    </div>
+    }
+    @for (tecnologia of tecnologias; track $index) {
+    <div class="min-w-[60px] h-full flex items-center justify-center px-2">
+      <img class="max-w-[40px] object-contain" src="{{tecnologia.url}}" alt="{{tecnologia.name}}" />
+    </div>
+    }
+  </div>
+</div>
