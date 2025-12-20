@@ -30,23 +30,23 @@ export class KnownTechs {
     { id: 6, name: 'react', url: './techs/react.svg', tipo: 'Frontend' },
     { id: 7, name: 'bootstrap', url: './techs/bootstrap.svg', tipo: 'Frontend' },
     { id: 8, name: 'tailwind', url: './techs/tailwind.svg', tipo: 'Frontend' },
-
+    { id: 9, name:'figma', url:'./techs/figma.svg', tipo:'Frontend'},
     // Backend
-    { id: 9, name: 'java', url: './techs/java.svg', tipo: 'Backend' },
-    { id: 10, name: 'spring-boot', url: './techs/spring-boot.svg', tipo: 'Backend' },
+    { id: 10, name: 'java', url: './techs/java.svg', tipo: 'Backend' },
+    { id: 11, name: 'spring-boot', url: './techs/spring-boot.svg', tipo: 'Backend' },
 
     // DB
-    { id: 11, name: 'mysql', url: './techs/mysql.svg', tipo: 'DB' },
-    { id: 12, name: 'postgresql', url: './techs/postgresql.svg', tipo: 'DB' },
-    { id: 13, name: 'oracle', url: './techs/oracle-svgrepo-com.svg', tipo: 'DB' },
+    { id: 12, name: 'mysql', url: './techs/mysql.svg', tipo: 'DB' },
+    { id: 13, name: 'postgresql', url: './techs/postgresql.svg', tipo: 'DB' },
+    { id: 14, name: 'oracle', url: './techs/oracle-svgrepo-com.svg', tipo: 'DB' },
 
     // Game Dev.
-    { id: 14, name: 'c--', url: './techs/c--.svg', tipo: 'Game Dev.' },
-    { id: 15, name: 'unity', url: './techs/unity-svgrepo-com.svg', tipo: 'Game Dev.' },
+    { id: 15, name: 'c--', url: './techs/c--.svg', tipo: 'Game Dev.' },
+    { id: 16, name: 'unity', url: './techs/unity-svgrepo-com.svg', tipo: 'Game Dev.' },
 
     // IDE
-    { id: 16, name: 'visual-studio', url: './techs/visual-studio-code-svgrepo-com.svg', tipo: 'IDE' },
-    { id: 17, name: 'apache-netbeans', url: './techs/apache-netbeans.svg', tipo: 'IDE' },
+    { id: 17, name: 'visual-studio', url: './techs/visual-studio-code-svgrepo-com.svg', tipo: 'IDE' },
+    { id: 18, name: 'apache-netbeans', url: './techs/apache-netbeans.svg', tipo: 'IDE' },
 
   ];
   getTechByTipo(tipo: string) {

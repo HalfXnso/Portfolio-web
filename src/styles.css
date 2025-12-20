@@ -1,3 +1,7 @@
+@use 'swiper/swiper.min.css';
+@use 'swiper/modules/navigation.min.css';
+@use 'swiper/modules/pagination.min.css';
+
 @import "tailwindcss";
 @plugin "daisyui";
 
