@@ -19,12 +19,12 @@
 </button>
 <dialog id="my_modal_4" class="modal">
   <div class="modal-box h-5/6">
-    <div method="dialog" class="modal-backdrop  text-black overflow-scroll p-2">
+    <div method="dialog" class="modal-backdrop  text-black  p-2">
       <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
       </form>
 
-      <select class="select" [(ngModel)]="categoriaSeleccionada">
+      <select class="select my-2" [(ngModel)]="categoriaSeleccionada">
         <option value="todos">Todos</option>
         <option value="Frontend">Frontend</option>
         <option value="Backend">Backend</option>
@@ -32,27 +32,28 @@
         <option value="Game Dev.">Game Dev.</option>
 
       </select>
-
-      <!-- Mostrar según selección -->
-      @if (categoriaSeleccionada === 'todos') {
-      @for (categoria of categorias; track categoria.tipo) {
-      <h1>{{categoria.titulo}}</h1>
-      @for (tech of getTechByTipo(categoria.tipo); track tech.name) {
-      <div class="text-lg flex font-bold text-center">
-        {{tech.name}}
-        <img class="w-8" [src]="tech.url" [alt]="tech.name">
+      <div class="h-5/6 overflow-scroll">
+        <!-- Mostrar según selección -->
+        @if (categoriaSeleccionada === 'todos') {
+        @for (categoria of categorias; track categoria.tipo) {
+        <h1>{{categoria.titulo}}</h1>
+        @for (tech of getTechByTipo(categoria.tipo); track tech.name) {
+        <div class="text-lg flex font-bold text-center">
+          {{tech.name}}
+          <img class="w-8" [src]="tech.url" [alt]="tech.name">
+        </div>
+        }
+        }
+        } @else {
+        <h1>{{categoriaSeleccionada}}</h1>
+        @for (tech of getTechByTipo(categoriaSeleccionada); track tech.name) {
+        <div class="text-lg flex font-bold text-center">
+          {{tech.name}}
+          <img class="w-8" [src]="tech.url" [alt]="tech.name">
+        </div>
+        }
+        }
       </div>
-      }
-      }
-      } @else {
-      <h1>{{categoriaSeleccionada}}</h1>
-      @for (tech of getTechByTipo(categoriaSeleccionada); track tech.name) {
-      <div class="text-lg flex font-bold text-center">
-        {{tech.name}}
-        <img class="w-8" [src]="tech.url" [alt]="tech.name">
-      </div>
-      }
-      }
     </div>
   </div>
 

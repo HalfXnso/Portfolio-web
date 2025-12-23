@@ -27,21 +27,31 @@ export class Experiences implements AfterViewInit {
       pagination: {
         clickable: true,
       },
-      navigation: true, // Esto activa las flechas
+      navigation: false,
       injectStyles: [
         `
         .swiper-button-next,
         .swiper-button-prev {
-          color: red; /* Cámbialo al color que prefieras */
+        color: black;
+        width:1dvh;
+        font-weight: bold;
+
+        z-index: 1;
+
+        }
+       .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+        position: absolute;
+         bottom: 0;
         }
         .swiper-pagination-bullet-active {
-          background: red;
+          background: blue;
+          margin-top: 5%;
         }
         `,
       ],
     };
 
-    // Asignamos los parámetros y luego inicializamos
+
     Object.assign(swiperEl, swiperParams);
     swiperEl.initialize();
   }
