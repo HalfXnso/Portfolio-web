@@ -21,7 +21,7 @@ export class Experiences implements AfterViewInit {
       spaceBetween: 30,
       loop: true,
       autoplay: {
-        delay: 2000,
+        delay: 5000,
         disableOnInteraction: false,
       },
       pagination: {

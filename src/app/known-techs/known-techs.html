@@ -32,9 +32,10 @@
         <option value="Game Dev.">Game Dev.</option>
 
       </select>
+
+      <!-- Mostrar según selección -->
+      @if (categoriaSeleccionada === 'todos') {
       <div class="h-5/6 overflow-scroll">
-        <!-- Mostrar según selección -->
-        @if (categoriaSeleccionada === 'todos') {
         @for (categoria of categorias; track categoria.tipo) {
         <h1>{{categoria.titulo}}</h1>
         @for (tech of getTechByTipo(categoria.tipo); track tech.name) {
@@ -44,7 +45,9 @@
         </div>
         }
         }
-        } @else {
+      </div>
+      } @else {
+      <div class="h-full overflow-scroll">
         <h1>{{categoriaSeleccionada}}</h1>
         @for (tech of getTechByTipo(categoriaSeleccionada); track tech.name) {
         <div class="text-lg flex font-bold text-center">
@@ -52,9 +55,10 @@
           <img class="w-8" [src]="tech.url" [alt]="tech.name">
         </div>
         }
-        }
       </div>
+      }
     </div>
   </div>
+
 
 </dialog>
