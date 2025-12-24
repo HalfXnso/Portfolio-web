@@ -1,3 +1,12 @@
-.voltpath-background{
+.voltpath-background {
 
-background: linear-gradient(135deg, #0b78ab 0%, #2dd4bf 45%, #4ade80 85%, #83cc16d0 100%);}
+  background: linear-gradient(135deg, #0b78ab 0%, #2dd4bf 45%, #4ade80 85%, #83cc16d0 100%);
+}
+
+.genesis-background {
+  background: linear-gradient(135deg,  #EC28E9 0%,#8b5cf6 45%, #4272D1 85%, #363DBD 100%);
+}
+
+.mas-fondos {
+  background: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
+}
