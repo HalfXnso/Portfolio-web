@@ -19,6 +19,11 @@ export class Projects {
       background_class: 'genesis-background',
       descripcion:''
     },
+     {
+      url: './thumbnails/Genesis.png',
+      background_class: 'genesis-background',
+      descripcion:''
+    },
   ]
 }
 

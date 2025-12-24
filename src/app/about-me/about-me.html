@@ -26,15 +26,19 @@
 
 </section>
 <dialog id="my_modal_2" class="modal">
-  <div class="modal-box h-5/6">
-    <div method="dialog" class="modal-backdrop  text-black overflow-scroll p-2">
+  <div class="modal-box h-5/6  bg-white/80 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm">
+    <div method="dialog" class="modal-backdrop text-black overflow-scroll p-0.5">
       <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
       </form>
       <img class="border-black/20 border rounded shadow-[2px_2px_2px_rgba(0,0,0,0.341)] w-[60%] mx-auto"
         src="./Profilepic.JPG" alt="profilepic">
       <div class="py-2  text-sm">
-        <span class="flex justify-center">07/11/2000 - Valencia,España · 46100</span>
+        <div class="flex py-2 justify-between items-center">
+          <div class="flex gap-1 items-center"> <img src="./Burjassot.png" class="w-5" alt="burjassot"> 46100 · Valencia,España</div>
+          <div class="flex items-center "><img src="./Cumple.svg" class="w-5" alt="burjassot">07/11/2000</div>
+
+        </div>
         <p class="border-t">
           Persona trabajadora, con iniciativa y muchas ganas de emprender un camino
           profesional exitoso.
@@ -45,7 +49,7 @@
         <div
           class="collapse hover:bg-white/50 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm border-black/20 border">
           <input type="checkbox" />
-          <div class="collapse-title flex items-center justify-between font-semibold">
+          <div class="collapse-title flex justify-between px-4 font-semibold">
             Certificados
 
             <svg class="w-8 p-0 m-0" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -74,13 +78,16 @@
         <div
           class="collapse  hover:bg-white/50 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm border-black/20 border">
           <input type="checkbox" />
-          <div class="collapse-title flex items-center justify-between font-semibold">Idiomas</div>
+          <div class="collapse-title flex justify-between px-4 font-semibold">Idiomas
+            <img src="./language.svg" class="w-6" alt="language-icon">
+          </div>
           <div class="collapse-content text-sm">
-            @for (certificado of certificados; track $index) {
+            @for (idioma of idiomas; track $index) {
 
-            <div class="flex items-center p-2  border-black/20 border gap-2 my-2">{{certificado.title}}
-              {{certificado.date}}
-              <img src="{{certificado.img}}" class="w-15" alt="">
+            <div class="flex items-center p-2  border-black/20 border gap-2 my-2">
+              <img src="{{idioma.icono}}" class="w-5" alt="language-level">
+              {{idioma.name}}: {{idioma.nivel}}
+
             </div>
 
             }
@@ -90,16 +97,20 @@
         <div
           class="collapse  hover:bg-white/50 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm border-black/20 border">
           <input type="checkbox" />
-          <div class="collapse-title flex items-center justify-between font-semibold">Información adicional</div>
-          <div class="collapse-content text-sm">
-            @for (certificado of certificados; track $index) {
+          <div class="collapse-title flex justify-between px-4 font-semibold">Información adicional
+            <img src="./dots-vertical.svg" class="w-6" alt="language-icon">
 
-            <div class="flex items-center p-2  border-black/20 border gap-2 my-2">{{certificado.title}}
-              {{certificado.date}}
-              <img src="{{certificado.img}}" class="w-15" alt="">
+          </div>
+          <div class="collapse-content text-sm">
+
+
+            <div class="flex items-center p-2  border-black/20 border gap-2 my-2">
+              Carnet de conducir - B1 <img class="w-8" src="./check.svg" alt="check">
+            </div>
+            <div class="flex items-center p-2  border-black/20 border gap-2 my-2">
+              Vehículo propio <img class="w-8" src="./check.svg" alt="check">
             </div>
 
-            }
           </div>
         </div>
       </section>
