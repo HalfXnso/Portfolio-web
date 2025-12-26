@@ -1,19 +1,40 @@
 <div class="flex flex-col h-full">
   <h1 class="text-center my-2">Proyectos Realizados</h1>
-  <section class="relative grid grid-cols-1 overflow-y-scroll md:my-2 auto-rows-[15px] gap-4 md:p-2 md:grid-cols-2 text-sm">
+  <section
+    class="relative grid grid-cols-1 md:my-2 overflow-y-scroll auto-rows-[15px] gap-4 md:p-2 md:grid-cols-2 text-sm">
 
 
     @for (item of proyectos; track $index) {
-    <div class="{{item.background_class}} group relative row-span-6 m-1 md:row-span-8 rounded-2xl shadow-[2px_2px_2px_rgba(0,0,0,0.341)]">
+    <button (click)="modal.showModal()"
+      class="{{item.background_class}} group border-0 relative row-span-6 m-1 md:row-span-8 rounded-2xl shadow-[2px_2px_2px_rgba(0,0,0,0.341)]">
 
-      <button class="absolute top-2 right-2 z-20  hidden group-hover:block rounded-full bg-gray-400 py-1 px-3 text-gray-300">x</button>
+      <button
+        class="absolute top-2 right-2 z-20  hidden group-hover:block rounded-full bg-gray-400 py-1 px-3 text-gray-300">x</button>
 
       <div class="absolute inset-0 px-6 pt-6.5 lg:pt-10 transition-all  duration-300 group-hover:p-0">
 
-        <img src="{{item.url}}" alt="Voltpath" class="w-full h-full object-cover rounded-t-md transition-all duration-300 group-hover:rounded-2xl" />
+        <img src="{{item.url}}" alt="Voltpath"
+          class="w-full h-full object-cover rounded-t-md transition-all duration-300 group-hover:rounded-2xl" />
       </div>
 
-    </div>
-  }
+    </button>
+
+    <dialog #modal class="modal">
+      <div class="modal-box h-5/6">
+        <div method="dialog" class="modal-backdrop  text-black  p-2">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+
+          {{item.name}}
+        </div>
+      </div>
+
+
+    </dialog>
+
+
+
+    }
   </section>
 </div>

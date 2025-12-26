@@ -10,16 +10,13 @@ import { Tecnologias } from '../known-techs/known-techs';
 export class Projects {
   proyectos: Project[] = [
     {
+      name:'voltpath',
       url: './thumbnails/Voltpath.jpg',
       background_class: 'voltpath-background',
       descripcion:''
     },
     {
-      url: './thumbnails/Genesis.png',
-      background_class: 'genesis-background',
-      descripcion:''
-    },
-     {
+      name:'genesis',
       url: './thumbnails/Genesis.png',
       background_class: 'genesis-background',
       descripcion:''
@@ -29,6 +26,7 @@ export class Projects {
 
 
 export interface Project {
+  name:string,
   url: string,
   background_class: string,
   descripcion: string,

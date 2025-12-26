@@ -20,4 +20,6 @@ describe('KnownTechs', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
 });

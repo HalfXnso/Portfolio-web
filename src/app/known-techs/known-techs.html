@@ -13,13 +13,14 @@
     }
   </div>
 </div>
-<button onclick="my_modal_4.showModal()"
+<button onclick="my_modal_2.showModal()"
   class="btn border-0 rounded-md z-1 bg-white/30 shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm">
   +
 </button>
+
 <dialog id="my_modal_4" class="modal">
-  <div class="modal-box h-5/6">
-    <div method="dialog" class="modal-backdrop  text-black  p-2">
+  <div class="modal-box h-5/6 overflow-hidden">
+    <div method="dialog" class="modal-backdrop h-full border text-black  p-2">
       <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
       </form>
@@ -35,7 +36,7 @@
 
       <!-- Mostrar según selección -->
       @if (categoriaSeleccionada === 'todos') {
-      <div class="h-5/6 overflow-scroll">
+      <div class="h-5/6 md:h-full overflow-y-scroll">
         @for (categoria of categorias; track categoria.tipo) {
         <h1>{{categoria.titulo}}</h1>
         @for (tech of getTechByTipo(categoria.tipo); track tech.name) {
@@ -61,4 +62,36 @@
   </div>
 
 
+</dialog>
+
+<!-- Open the modal using ID.showModal() method -->
+<button class="btn" onclick="my_modal_23.showModal()">open modal</button>
+<dialog id="my_modal_23" class="modal">
+  <div class="modal-box  overflow-hidden">
+    <div method="dialog" class="modal-backdrop h-full flex flex-col my-2 gap-6 justify-center  text-black  p-2">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+      </form>
+      <select class="select " [(ngModel)]="categoriaSeleccionada" (ngModelChange)="onCategoriaChange($event)">
+        <option value="todos">Todos</option>
+        <option value="Frontend">Frontend</option>
+        <option value="Backend">Backend</option>
+        <option value="IDE">IDE</option>
+        <option value="Game Dev.">Game Dev.</option>
+      </select>
+      <div class="relative w-full aspect-square max-w-[18rem] mx-auto">
+        <div class="relative w-full aspect-square max-w-[20rem] mx-auto">
+          <div *ngFor="let node of nodes"
+            class="absolute transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
+            [ngClass]="node.fill" [style.left.%]="(node.x / 1000) * 100" [style.top.%]="(node.y / 1000) * 100"
+            [style.width.%]="((node.r * 2) / 1000) * 100" [style.height.%]="((node.r * 2) / 1000) * 100"
+            [style.border-radius]="'50%'" [style.backgroundColor]="'currentColor'"
+            [style.border]="strokeSize + 'px solid #ffffff33'" [attr.title]="node.name + ' - ' + node.tipo">
+            <img [src]="node.url" [alt]="node.name" class="w-2/3 h-2/3 object-contain pointer-events-none" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </dialog>
