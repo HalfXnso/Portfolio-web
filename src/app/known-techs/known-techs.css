@@ -1,9 +1,16 @@
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-50%)); }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50%)); }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+    width: max-content;
+  }
+
+.modal.modal-open, .modal[open], .modal:target, .modal-toggle:checked + .modal{
+  background-color: rgba(0, 0, 0, 0.399);
+  backdrop-filter: blur(18px);
 }
 
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-  width: max-content;
-}
+

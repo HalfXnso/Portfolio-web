@@ -21,6 +21,18 @@ export class Projects {
       background_class: 'genesis-background',
       descripcion:''
     },
+     {
+      name:'genesis',
+      url: './thumbnails/Genesis.png',
+      background_class: 'genesis-background',
+      descripcion:''
+    },
+     {
+      name:'genesis',
+      url: './thumbnails/Genesis.png',
+      background_class: 'genesis-background',
+      descripcion:''
+    },
   ]
 }
 

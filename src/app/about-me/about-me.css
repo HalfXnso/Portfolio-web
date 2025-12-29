@@ -1,3 +1,26 @@
+.apple-text-gradient {
+  font-weight: bold;
+  /* 1. Usamos un gradiente más ancho (200%) para que tenga espacio para moverse */
+  background-image: linear-gradient(to right, #50C878, #FFD700, #9370DB, #50C878);
+  background-size: 200% auto;
+
+  /* 2. Clip del fondo al texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 3. Transparencia para revelar el gradiente */
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  /* Forzamos transparencia */
+
+  /* 4. Animación: Hace que la energía "fluya" */
+  animation: shine 4s linear infinite;
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
 .app-about-me {
   z-index: -1;
   position: absolute;
@@ -33,6 +56,14 @@
 }
 
 
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50%)); }
+}
 
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+  width: max-content;
+}
 
 

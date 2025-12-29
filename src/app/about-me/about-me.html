@@ -1,33 +1,57 @@
-<div class="app-about-me"></div>
-
-<section class=" text-[#F2F2F2] flex flex-col justify-between  bg-black/40  h-full">
-
-  <div class="text-rotate text-xl flex justify-center">
-    <span class="justify-items-center">
-      <span class="apple-text-gradient">Actitud Abierta Y Flexible</span>
-      <span class="apple-text-gradient">Iniciativa Propia</span>
-      <span class="apple-text-gradient">Ganas De Aprender</span>
-      <span class="apple-text-gradient">Trabajo en equipo</span>
-      <span class="apple-text-gradient">Seriedad Y Responsabilidad</span>
-      <span class="apple-text-gradient">Trabajo Bajo Presión</span>
-      <span class="apple-text-gradient">Capacidad De Respuesta</span>
-    </span>
+<section
+  class=" text-[#F2F2F2] flex flex-col overflow-x-hidden justify-between md:px-0 px-2 lg:mx-[15%] xl:mx-[22%]   w-full lg:w-auto  h-full">
+  <div class="flex  justify-center">
+    <h1 class="my-8 text-center text-[24px] md:text-[30px] lg:text-[38px] xl:text-[54px] border-0 md:text-nowrap apple-text-gradient">
+      Alfonso Gaitán Pérez
+      <p class="text-[22px] md:text-[28px] lg:text-[36px] xl:text-[52px]">Junior Developer</p>
+    </h1>
   </div>
+  <div class="relative w-[90%] mx-auto rounded-md shadow-[#ffffff95] shadow-[0px_1px_30px_1px] lg:shadow-[0px_0px_40px_2px]  flex justify-center">
+    <img src="./Aura-use.png" class="lg:w-full rounded-md h-full " alt="aura">
 
-  <div class="flex flex-col gap-2">
+    <div
+      class="
+          w-full bg-[linear-gradient(to_right,rgba(0,0,0,0.37)_100%,transparent_80%)]
+          md:w-80  md:bg-[linear-gradient(to_right,rgba(0,0,0,0.87)_60%,transparent_80%)]
+          lg:w-95  lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.87)_60%,transparent_80%)]
+          absolute rounded-l-md inset-y-0 left-0 pointer-events-none md:backdrop-blur-[1px] xl:bg-[linear-gradient(to_right,rgba(0,0,0,0.87)_60%,transparent_80%)]">
+    </div>
 
-
-
+    <div
+      class="text-rotate absolute md:bg-white/0 px-1 md:px-0 bg-white/30 backdrop-blur-md rounded-md mx-auto top-1/2 md:left-1 md:top-1/2 text-xl flex justify-center">
+      <span class="justify-items-center">
+        <span>Actitud Abierta Y Flexible</span>
+        <span>Iniciativa Propia</span>
+        <span>Ganas De Aprender</span>
+        <span>Trabajo en equipo</span>
+        <span>Seriedad Y Responsabilidad</span>
+        <span>Trabajo Bajo Presión</span>
+        <span>Capacidad De Respuesta</span>
+      </span>
+    </div>
     <button
-      class="btn mx-auto border-0 mb-2 hover:bg-white/50 bg-white/30 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm text-sm "
+      class="btn mx-auto absolute border-0 top-9/12 md:top-5/6  md:w-[20dvh] mb-2 hover:bg-white/50 bg-white/30 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm text-sm "
       onclick="my_modal_2.showModal()">Sobre mí</button>
-
   </div>
 
+  <div class="mx-auto w-full mt-20 z-0 mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+    <div class="flex w-max animate-scroll  h-full lg:gap-7 items-center">
+      @for (tecnologia of tecnologias; track $index) {
+      <div class="min-w-12 lg:min-w-14 h-full flex items-center  justify-center">
+        <img class="max-w-8 lg:max-w-10 " src="{{tecnologia.url}}" alt="{{tecnologia.name}}" />
+      </div>
+      }
+      @for (tecnologia of tecnologias; track $index) {
+      <div class="min-w-12 lg:min-w-14 h-full flex items-center justify-center">
+        <img class="max-w-8 lg:max-w-10 object-contain" src="{{tecnologia.url}}" alt="{{tecnologia.name}}" />
+      </div>
+      }
+    </div>
+  </div>
 </section>
-<dialog id="my_modal_2" class="modal p-2">
+<dialog id="my_modal_2" class="modal">
   <div class="modal-box h-5/6  bg-white/80 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm">
-    <div method="dialog" class="modal-backdrop text-black p-0.5">
+    <div method="dialog" class="modal-backdrop relative text-black ">
       <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
       </form>
@@ -35,7 +59,8 @@
         src="./Profilepic.JPG" alt="profilepic">
       <div class="py-2  text-sm">
         <div class="flex py-2 justify-between items-center">
-          <div class="flex gap-1 items-center"> <img src="./Burjassot.png" class="w-5" alt="burjassot"> 46100 · Valencia,España</div>
+          <div class="flex gap-1 items-center"> <img src="./Burjassot.png" class="w-5" alt="burjassot"> 46100 ·
+            Valencia,España</div>
           <div class="flex items-center "><img src="./Cumple.svg" class="w-5" alt="burjassot">07/11/2000</div>
 
         </div>

@@ -27,7 +27,7 @@ export class Experiences implements AfterViewInit {
       pagination: {
         clickable: true,
       },
-      navigation: false,
+      navigation: true,
       injectStyles: [
         `
         .swiper-button-next,

@@ -1,23 +1,69 @@
-.apple-text-gradient {
-  font-weight: bold;
-  /* 1. Usamos un gradiente más ancho (200%) para que tenga espacio para moverse */
-  background-image: linear-gradient(to right, #50C878, #FFD700, #9370DB, #50C878);
-  background-size: 200% auto;
+.carta-border {
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+  --opacity: 0;
 
-  /* 2. Clip del fondo al texto */
-  -webkit-background-clip: text;
-  background-clip: text;
+  width: 350px;
+  height: 200px;
+  border-radius: 12px;
+  padding: 1px; /* Este padding define el grosor del borde */
+  position: relative;
+  background: #222; /* Color del borde cuando no hay hover */
 
-  /* 3. Transparencia para revelar el gradiente */
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  /* Forzamos transparencia */
-
-  /* 4. Animación: Hace que la energía "fluya" */
-  animation: shine 4s linear infinite;
+  /* Transición suave para que la luz no desaparezca de golpe */
+  transition: background 0.3s ease;
+  cursor: pointer;
 }
-@keyframes shine {
-  to {
-    background-position: 200% center;
-  }
+
+/* La luz que ilumina el borde y el fondo */
+.carta-border::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Ocupa todo el espacio incluyendo el borde */
+  border-radius: inherit;
+  opacity: var(--opacity);
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.3), /* Color de la luz */
+    transparent 40%
+  );
+  z-index: 0;
+}
+
+.carta-content {
+  background: #111; /* Color de fondo interno (más oscuro) */
+  width: 100%;
+  height: 100%;
+  border-radius: 11px; /* Un poco menos que el padre para encajar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1; /* Por encima de la luz del borde */
+}
+
+/* Opcional: una luz interna más tenue para el contenido */
+.carta-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: var(--opacity);
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.05),
+    transparent 40%
+  );
+  z-index: -1;
+}
+.main-projects-container {
+  background-color: #f8fafc; /* Un gris azulado muy claro (Tailwind slate-50) */
+  position: relative;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(59, 131, 246, 0.329) 0px, transparent 50%),   /* Azul suave */
+    radial-gradient(at 100% 0%, rgba(216, 70, 239, 0.329) 0px, transparent 50%), /* Rosa suave */
+    radial-gradient(at 50% 100%, rgba(34, 197, 94, 0.329) 0px, transparent 50%); /* Verde suave */
+  background-attachment: fixed;
 }

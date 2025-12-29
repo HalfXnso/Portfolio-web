@@ -1,12 +1,11 @@
-<div class="flex flex-col h-full">
-  <h1 class="text-center my-2">Proyectos Realizados</h1>
-  <section
-    class="relative grid grid-cols-1 md:my-2 overflow-y-scroll auto-rows-[15px] gap-4 md:p-2 md:grid-cols-2 text-sm">
-
+<section id="proyectos" class="flex flex-col lg:mx-[15%]  my-20 lg:my-50 h-full ">
+  <h2  class="text-center text-[#F2F2F2]   my-30  text-[24px] lg:text-5xl">Proyectos Realizados</h2>
+  <div
+    class="lg:w-2/3 px-6  md:mx-auto grid grid-cols-1  auto-rows-[2px] md:auto-rows-[2px] gap-8  md:grid-cols-2 text-sm">
 
     @for (item of proyectos; track $index) {
     <button (click)="modal.showModal()"
-      class="{{item.background_class}} group border-0 relative row-span-6 m-1 md:row-span-8 rounded-2xl shadow-[2px_2px_2px_rgba(0,0,0,0.341)]">
+      class="{{item.background_class}} group cursor-pointer  hover:shadow-[#999999] shadow-[0px_0px_12px_2px] border-0 relative  row-span-6 m-2 md:row-span-8 rounded-2xl">
 
       <button
         class="absolute top-2 right-2 z-20  hidden group-hover:block rounded-full bg-gray-400 py-1 px-3 text-gray-300">x</button>
@@ -36,5 +35,5 @@
 
 
     }
-  </section>
-</div>
+  </div>
+</section>

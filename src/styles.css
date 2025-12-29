@@ -7,15 +7,21 @@
 
 :root {
   color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Protest Strike", sans-serif;
-  background: rgb(255, 255, 255);
-  background: radial-gradient(
-      #F2F2F2 0%,
-      rgb(24, 30, 36) 73%);
+   background-color: #080808; /* Color base muy oscuro */
+  position: relative;
+  /* Creamos 3 manchas de color diferentes */
+  background-image:
+    radial-gradient(at 0% 0%, rgba(76, 29, 149, 0.15) 0px, transparent 50%),   /* Violeta arriba izq */
+    radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%), /* Azul arriba der */
+    radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.1) 0px, transparent 50%); /* Esmeralda abajo */
 
+  /* Esto asegura que el fondo cubra todo y no se repita */
+  background-attachment: fixed;
 
   padding: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
 

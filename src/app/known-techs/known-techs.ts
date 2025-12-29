@@ -27,38 +27,42 @@ export class KnownTechs implements OnInit {
     { titulo: 'Frontend', tipo: 'Frontend' },
     { titulo: 'Backend', tipo: 'Backend' },
     { titulo: 'Extra', tipo: 'Game Dev.' },
-    { titulo: 'IDE', tipo: 'IDE' }
+    { titulo: 'IDE', tipo: 'IDE' },
+    { titulo: 'Version Control', tipo: 'Version Control' },
+
   ];
 
 
   tecnologias: Tecnologias[] = [
     // Frontend
-    { id: 1, name: 'html-5', url: './techs/html-5.svg', tipo: 'Frontend', value: 40, descripcion: '' },
-    { id: 2, name: 'css3', url: './techs/css3.svg', tipo: 'Frontend', value: 38, descripcion: '' },
+    { id: 1, name: 'html-5', url: './techs/html-5.svg', tipo: 'Frontend', value: 90, descripcion: '' },
+    { id: 2, name: 'css3', url: './techs/css3.svg', tipo: 'Frontend', value: 78, descripcion: '' },
     { id: 3, name: 'javascript', url: './techs/javascript.svg', tipo: 'Frontend', value: 45, descripcion: '' },
-    { id: 4, name: 'typescript', url: './techs/typescript.svg', tipo: 'Frontend', value: 42, descripcion: '' },
-    { id: 5, name: 'angular', url: './techs/angular.svg', tipo: 'Frontend', value: 50, descripcion: '' },
+    { id: 4, name: 'typescript', url: './techs/typescript.svg', tipo: 'Frontend', value: 72, descripcion: '' },
+    { id: 5, name: 'angular', url: './techs/angular.svg', tipo: 'Frontend', value: 70, descripcion: '' },
     { id: 6, name: 'react', url: './techs/react.svg', tipo: 'Frontend', value: 32, descripcion: '' },
     { id: 7, name: 'bootstrap', url: './techs/bootstrap.svg', tipo: 'Frontend', value: 30, descripcion: '' },
-    { id: 8, name: 'tailwind', url: './techs/tailwind.svg', tipo: 'Frontend', value: 36, descripcion: '' },
-    { id: 9, name: 'figma', url: './techs/figma.svg', tipo: 'Frontend', value: 28, descripcion: '' },
+    { id: 8, name: 'tailwind', url: './techs/tailwind.svg', tipo: 'Frontend', value: 86, descripcion: '' },
+    { id: 9, name: 'figma', url: './techs/figma.svg', tipo: 'Frontend', value: 68, descripcion: '' },
 
     // Backend
     { id: 10, name: 'java', url: './techs/java.svg', tipo: 'Backend', value: 80, descripcion: '' },
-    { id: 11, name: 'spring-boot', url: './techs/spring-boot.svg', tipo: 'Backend', value: 38, descripcion: '' },
+    { id: 11, name: 'spring-boot', url: './techs/spring-boot.svg', tipo: 'Backend', value: 70, descripcion: '' },
 
     // DB
-    { id: 12, name: 'mysql', url: './techs/mysql.svg', tipo: 'DB', value: 35, descripcion: '' },
-    { id: 13, name: 'postgresql', url: './techs/postgresql.svg', tipo: 'DB', value: 33, descripcion: '' },
-    { id: 14, name: 'oracle', url: './techs/oracle-svgrepo-com.svg', tipo: 'DB', value: 26, descripcion: '' },
+    { id: 12, name: 'mysql', url: './techs/mysql.svg', tipo: 'DB', value: 70, descripcion: '' },
+    { id: 13, name: 'postgresql', url: './techs/postgresql.svg', tipo: 'DB', value: 70, descripcion: '' },
+    { id: 14, name: 'oracle', url: './techs/oracle-svgrepo-com.svg', tipo: 'DB', value: 65, descripcion: '' },
 
     // Game Dev.
-    { id: 15, name: 'c--', url: './techs/c--.svg', tipo: 'Game Dev.', value: 22, descripcion: '' },
-    { id: 16, name: 'unity', url: './techs/unity-svgrepo-com.svg', tipo: 'Game Dev.', value: 24, descripcion: '' },
+    { id: 15, name: 'c--', url: './techs/c--.svg', tipo: 'Game Dev.', value: 40, descripcion: '' },
+    { id: 16, name: 'unity', url: './techs/unity-svgrepo-com.svg', tipo: 'Game Dev.', value: 40, descripcion: '' },
 
     // IDE
-    { id: 17, name: 'visual-studio', url: './techs/visual-studio-code-svgrepo-com.svg', tipo: 'IDE', value: 45, descripcion: '' },
-    { id: 18, name: 'apache-netbeans', url: './techs/apache-netbeans.svg', tipo: 'IDE', value: 30, descripcion: '' },
+    { id: 17, name: 'visual-studio', url: './techs/visual-studio-code-svgrepo-com.svg', tipo: 'IDE', value: 80, descripcion: '' },
+    { id: 18, name: 'apache-netbeans', url: './techs/apache-netbeans.svg', tipo: 'IDE', value: 50, descripcion: '' },
+    { id: 19, name: 'git', url: './techs/git.svg', tipo: 'Version Control', value: 90, descripcion: '' },
+
   ];
 
 
@@ -77,7 +81,7 @@ export class KnownTechs implements OnInit {
 
   private createChart(): void {
     const color = d3.scaleOrdinal<string>()
-      .domain(['Frontend', 'Backend', 'DB', 'Game Dev.', 'IDE'])
+      .domain(['Frontend', 'Backend', 'DB', 'Game Dev.', 'IDE','Version Control'])
       .range([
         'text-sky-400',
         'text-lime-400',
