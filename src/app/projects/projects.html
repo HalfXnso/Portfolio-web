@@ -1,10 +1,10 @@
 <section id="proyectos" class="flex flex-col lg:mx-[15%]  my-20 lg:my-50 h-full ">
-  <h2  class="text-center text-[#F2F2F2]   my-30  text-[24px] lg:text-5xl">Proyectos Realizados</h2>
+  <h2 class="text-center text-[#F2F2F2]   my-30  text-[24px] lg:text-5xl">Proyectos Realizados</h2>
   <div
     class="lg:w-2/3 px-6  md:mx-auto grid grid-cols-1  auto-rows-[2px] md:auto-rows-[2px] gap-8  md:grid-cols-2 text-sm">
 
     @for (item of proyectos; track $index) {
-    <button (click)="modal.showModal()"
+    <button (click)="openModal(item)"
       class="{{item.background_class}} group cursor-pointer  hover:shadow-[#999999] shadow-[0px_0px_12px_2px] border-0 relative  row-span-6 m-2 md:row-span-8 rounded-2xl">
 
       <button
@@ -12,27 +12,30 @@
 
       <div class="absolute inset-0 px-6 pt-6.5 lg:pt-10 transition-all  duration-300 group-hover:p-0">
 
-        <img src="{{item.url}}" alt="Voltpath"
+        <img src="{{item.src}}" alt="Voltpath"
           class="w-full h-full object-cover rounded-t-md transition-all duration-300 group-hover:rounded-2xl" />
       </div>
 
     </button>
 
     <dialog #modal class="modal">
-      <div class="modal-box h-5/6">
-        <div method="dialog" class="modal-backdrop  text-black  p-2">
-          <form method="dialog">
-            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          </form>
+      <div class="modal-box w-full lg:w-5/12 lg:rounded-t-2xl h-screen rounded-b-none p-0 max-w-5xl  shadow-[#ffffff95] shadow-[0px_0px_20px_1px] ">
+        <div method="dialog" class="modal-backdrop  text-black">
 
+          <button (click)="close()"
+            class="btn btn-sm btn-circle btn-ghost bg-white/30 mix-blend-difference z-30 absolute right-2 top-2">✕</button>
+
+          <div class="border">
+            <div class="border" #player data-plyr-provider="youtube" [attr.data-plyr-embed-id]="item.url">
+            </div>
+          </div>
+          <div class="border mt-[190%]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nihil facilis quam numquam. Temporibus voluptate totam omnis eligendi dolores laborum dolor rem praesentium. Odit tempore, maxime enim numquam amet facilis!
+          </div>
           {{item.name}}
         </div>
       </div>
-
-
     </dialog>
-
-
 
     }
   </div>

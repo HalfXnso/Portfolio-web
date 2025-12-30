@@ -8,9 +8,6 @@
     width: max-content;
   }
 
-.modal.modal-open, .modal[open], .modal:target, .modal-toggle:checked + .modal{
-  background-color: rgba(0, 0, 0, 0.399);
-  backdrop-filter: blur(18px);
-}
+
 
 
