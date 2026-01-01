@@ -13,5 +13,7 @@
 
 
 
-
+.modal .modal-box::-webkit-scrollbar {
+    display: none !important;
+}
 

@@ -1,14 +1,13 @@
 <section id="proyectos" class="flex flex-col lg:mx-[15%]  my-20 lg:my-50 h-full ">
   <h2 class="text-center text-[#F2F2F2]   my-30  text-[24px] lg:text-5xl">Proyectos Realizados</h2>
-  <div
-    class="lg:w-2/3 px-6  md:mx-auto grid grid-cols-1  auto-rows-[2px] md:auto-rows-[2px] gap-8  md:grid-cols-2 text-sm">
+  <div class="w-full xl:w-11/12 2xl:w-9/12 px-6 border md:mx-auto grid grid-cols-1   gap-8  md:grid-cols-2 text-sm">
 
     @for (item of proyectos; track $index) {
     <button (click)="openModal(item)"
-      class="{{item.background_class}} group cursor-pointer  hover:shadow-[#999999] shadow-[0px_0px_12px_2px] border-0 relative  row-span-6 m-2 md:row-span-8 rounded-2xl">
+      class="{{item.background_class}}  aspect-video group cursor-pointer  shadow-[#999999] shadow-[0px_0px_5px_1px] hover:shadow-[0px_0px_12px_2px] border-0 relative  rounded-2xl">
 
       <button
-        class="absolute top-2 right-2 z-20  hidden group-hover:block rounded-full bg-gray-400 py-1 px-3 text-gray-300">x</button>
+        class="btn btn-sm btn-circle hidden group-hover:block hover:bg-gray-400 hover:border-gray-400 bg-gray-500 border-gray-500 shadow-black shadow-[0px_0px_5px_1px] text-white z-40 absolute right-2 top-2">+</button>
 
       <div class="absolute inset-0 px-6 pt-6.5 lg:pt-10 transition-all  duration-300 group-hover:p-0">
 
@@ -18,25 +17,38 @@
 
     </button>
 
-    <dialog #modal class="modal">
-      <div class="modal-box w-full lg:w-5/12 lg:rounded-t-2xl h-screen rounded-b-none p-0 max-w-5xl  shadow-[#ffffff95] shadow-[0px_0px_20px_1px] ">
-        <div method="dialog" class="modal-backdrop  text-black">
+ <dialog #modal class="modal">
+      <div
+        class="modal-box w-full lg:w-5/12 lg:rounded-t-2xl h-screen lg:mt-12 rounded-b-none p-0 max-w-5xl  overflow-hidden">
+        <div method="dialog" class="modal-backdrop text-black h-full">
+          <div
+            class="h-full overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
 
-          <button (click)="close()"
-            class="btn btn-sm btn-circle btn-ghost bg-white/30 mix-blend-difference z-30 absolute right-2 top-2">✕</button>
+            <button (click)="close()"
+              class="btn btn-sm btn-circle hover:bg-gray-400 hover:border-gray-400 bg-gray-500 border-gray-500 shadow-black shadow-[0px_0px_5px_1px] text-white z-20 absolute right-3 top-4">✕</button>
 
-          <div class="border">
-            <div class="border" #player data-plyr-provider="youtube" [attr.data-plyr-embed-id]="item.url">
+            <div #player data-plyr-provider="youtube" [attr.data-plyr-embed-id]="item.url"> 
             </div>
+
+            <div class="flex w-full">
+              @for (url of usedTechs; track $index) {
+              <img class="w-8" src="{{url}}" alt="usedTec">
+              }
+            </div>
+
+            <div class="border mt-[10%]">
+             {{usedProject?.descripcion}}
+            </div>
+
+            {{usedProject?.name}}
+
           </div>
-          <div class="border mt-[190%]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nihil facilis quam numquam. Temporibus voluptate totam omnis eligendi dolores laborum dolor rem praesentium. Odit tempore, maxime enim numquam amet facilis!
-          </div>
-          {{item.name}}
+
         </div>
       </div>
     </dialog>
 
     }
+
   </div>
 </section>
