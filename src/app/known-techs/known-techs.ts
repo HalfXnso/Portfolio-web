@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import * as d3 from 'd3';
 import { BubbleNode, Tecnologias } from '../interfaces/interfaces';
@@ -13,6 +13,8 @@ import { Techs } from '../services/techs';
 
 export class KnownTechs implements OnInit {
 
+  @ViewChild('techModal') modalRef!: ElementRef<HTMLDialogElement>;
+  usedTech: Tecnologias | null = null;
   tecnologias: Tecnologias[] = [];
   tecnologiasFiltradas: Tecnologias[] = [];
   nodes: BubbleNode[] = [];
@@ -37,11 +39,29 @@ export class KnownTechs implements OnInit {
   constructor(private techService: Techs) { }
 
   ngOnInit(): void {
-      this.getTechs();
+    this.getTechs();
   }
 
-  async getTechs() {
-    this.tecnologias = await this.techService.getTechs();
+  openModal(tech: any) {
+
+    this.tecnologias.forEach(tecnologia => {
+      if (tecnologia.name == tech.name) {
+        this.usedTech = tecnologia;
+      }
+    });
+
+    this.modalRef.nativeElement.showModal();
+
+  }
+
+  closeModal() {
+    this.usedTech = null;
+    this.modalRef.nativeElement.close();
+    console.log(this.usedTech);
+  }
+
+  getTechs() {
+    this.tecnologias = this.techService.getTechs();
     this.tecnologiasFiltradas = this.tecnologias;
     this.createChart();
   }
@@ -50,11 +70,12 @@ export class KnownTechs implements OnInit {
     const color = d3.scaleOrdinal<string>()
       .domain(['Frontend', 'Backend', 'DB', 'Game Dev.', 'IDE', 'Version Control'])
       .range([
-        'text-sky-300',
-        'text-lime-400',
-        'text-orange-400',
-        'text-pink-400',
-        'text-violet-400',
+        'frontend',
+        'backend',
+        'db',
+        'game-dev',
+        'ide',
+        'version-control'
       ]);
 
     const pack = d3
@@ -91,6 +112,7 @@ export class KnownTechs implements OnInit {
     this.nodes = [];
     setTimeout(() => this.createChart(), 0);
   }
+
 
 }
 

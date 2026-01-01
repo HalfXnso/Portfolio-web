@@ -22,8 +22,8 @@
 
     <app-experiences></app-experiences>
   </div>
-  <div id="contacto" class="hidden lg:flex  p-2.5 border text-[#F2F2F2] mx-[15%] justify-center gap-6">
-    <div #cardElement class="carta-border " (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave()">
+  <div id="contacto" class="hidden lg:flex my-20  p-2.5 text-[#F2F2F2] mx-[15%] justify-center gap-6">
+    <div #card1 class="carta-border" (mousemove)="onMouseMove($event, card1)" (mouseleave)="onMouseLeave(card2)">
       <div class="carta-content flex gap-4">
         <button class="btn btn-lg btn-circle" (click)="downloadCV()">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -34,8 +34,7 @@
         <h3>Descarga mi curriculum</h3>
       </div>
     </div>
-    <div #cardElement class="carta-border " (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave()">
-
+    <div #card2 class="carta-border" (mousemove)="onMouseMove($event, card2)" (mouseleave)="onMouseLeave(card2)">
       <div class="carta-content gap-8 p-4">
         <h1>Contacta conmigo</h1>
         <div class="flex">
@@ -79,7 +78,7 @@
     </div>
     <!-- buttons that show up when FAB is open -->
     <button class="btn btn-lg" onclick="my_modal_2.showModal()">Sobre mí</button>
-    <button class="btn btn-lg" (click)="scrollTo('proyectos')" >Proyectos</button>
+    <button class="btn btn-lg" (click)="scrollTo('proyectos')">Proyectos</button>
 
     <button class="btn btn-lg" (click)="scrollTo('tecnologias')">Tecnologías</button>
     <button class="btn btn-lg" (click)="scrollTo('experiencias')">Experiencias</button>
@@ -129,7 +128,7 @@
   </div>
 
 </section>
-<div class="flex mt-18 mb-2 mx-[15%] justify-center">
+<div class="flex mt-5 lg:mt-18 mb-2 mx-[15%] justify-center">
   <button
     class="p-2 btn border-2 border-black bg-yellow-200 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm w-full"
     onclick="my_modal_3.showModal()">Uso del sitio web</button>

@@ -24,22 +24,18 @@ export class App {
     document.body.removeChild(link);
   }
 
-  @ViewChild('cardElement') card!: ElementRef<HTMLElement>;
-
-  onMouseMove(e: MouseEvent) {
-    const rect = this.card.nativeElement.getBoundingClientRect();
+  onMouseMove(e: MouseEvent, el: HTMLElement) {
+    const rect = el.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const el = this.card.nativeElement;
     el.style.setProperty('--mouse-x', `${x}px`);
     el.style.setProperty('--mouse-y', `${y}px`);
-    el.style.setProperty('--opacity', '1'); // Encendemos la luz
+    el.style.setProperty('--opacity', '1');
   }
 
-  onMouseLeave() {
-    // Apagamos la luz al salir
-    this.card.nativeElement.style.setProperty('--opacity', '0');
+  onMouseLeave(el: HTMLElement) {
+    el.style.setProperty('--opacity', '0');
   }
   scrollTo(id: string) {
     const el = document.getElementById(id);

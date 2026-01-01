@@ -129,6 +129,7 @@ export class Projects implements OnInit {
 
   }
 
+
   close() {
     this.player.muted = true;
     this.player.stop(); // reinicia el vídeo
@@ -137,10 +138,8 @@ export class Projects implements OnInit {
 
   updateUsedTechs(project: Project): void {
 
-    // Limpiar el array primero
     this.usedTechs = [];
 
-    // Buscar y añadir las URLs de las tecnologías
     project.techs.forEach(techName => {
 
       const tecnologia = this.techs.find(t => t.name === techName);

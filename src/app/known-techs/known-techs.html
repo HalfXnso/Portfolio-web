@@ -1,9 +1,9 @@
 <section class="mt-28  flex mx-[15%] items-center flex-col relative  ">
-  <h2 class="  bg-white/40 absolute rounded-md backdrop-blur-md p-2 z-1 lg:text-5xl">Tecnologías conocidas
+  <h2 class="rounded-md backdrop-blur-md text-center  my-15 p-2  text-[24px] lg:text-5xl">Tecnologías conocidas
   </h2>
 
-  <div class="w-full flex flex-col items-center  my-40">
-    <div class="flex">
+  <div class="w-full flex flex-col gap-6 items-center  my-20">
+    <div class="flex justify-end w-full">
       <select class="select " [(ngModel)]="categoriaSeleccionada" (ngModelChange)="onCategoriaChange($event)">
         <option value="todos">Todos</option>
         <option value="Frontend">Frontend</option>
@@ -14,22 +14,19 @@
         <option value="Version Control">VC</option>
 
       </select>
-      <button onclick="my_modal_4.showModal()"
-        class="btn border-0 rounded-md z-1 bg-white/30 shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm">
-        +
-      </button>
     </div>
-    <div class="relative w-full   aspect-square mx-auto">
+    <div class="relative w-full md:w-5/6 lg:w-4/6 xl:w-3/6">
       <div class="relative w-full flex justify-center aspect-square  mx-auto">
         @for (node of nodes; track $index) {
-        <button onclick="my_modal_5.showModal()"
-          class="absolute transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
-          [ngClass]="node.fill" [style.left.%]="(node.x / 1000) * 110" [style.top.%]="(node.y / 1000) * 110"
-          [style.width.%]="((node.r * 2) / 1000) * 110" [style.height.%]="((node.r * 2) / 1000) * 110"
+        <button (click)="openModal(node)"
+          class="absolute cursor-pointer shadow-[2px_2px_2px_rgba(0,0,0,0.341)] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center hover:brightness-125 active:brightness-125 transition-all duration-300"
+          [ngClass]="node.fill" [style.left.%]="(node.x / 1000) *120" [style.top.%]="(node.y / 1000) *120"
+          [style.width.%]="((node.r * 2) / 1000) *120" [style.height.%]="((node.r * 2) / 1000) *120"
           [style.border-radius]="'50%'" [style.backgroundColor]="'currentColor'"
           [style.border]="strokeSize + 'px solid #ffffff33'" [attr.title]="node.name + ' - ' + node.tipo">
-          <img [src]="node.url" [alt]="node.name" class="lg:w-2/3  h-2/3 object-contain pointer-events-none" />
+          <img [src]="node.url" [alt]="node.name" class="w-7/12 h-2/3 object-contain pointer-events-none" />
         </button>
+
 
         }
       </div>
@@ -82,14 +79,19 @@
 
 
 </dialog>
+<dialog #techModal class="modal">
+  <div class="modal-box h-5/6 overflow-hidden">
+    <div method="dialog" class="modal-backdrop flex flex-col h-full  text-black">
+      <button (click)="closeModal()"
+        class="btn btn-sm btn-circle hover:bg-gray-400 hover:border-gray-400 bg-gray-500 border-gray-500 shadow-black shadow-[0px_0px_5px_1px] text-white z-20 absolute right-2 top-2">✕</button>
+      <div class="mx-auto w-[80%] flex flex-col items-center justify-center h-50 font-bold uppercase mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] border-b">
+        <img class="w-40" src="{{usedTech?.url}}" alt="{{usedTech?.name}}">
+        {{usedTech?.name}}
+      </div>
+      <div class="mt-2">
 
-<dialog id="my_modal_5" class="modal">
-  <div class="modal-box h-5/6 bg-red5 overflow-hidden">
-    <div method="dialog" class="modal-backdrop h-full border text-black  p-2">
-      <form method="dialog">
-        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-      </form>
-      gg
+        {{usedTech?.descripcion}}
+      </div>
     </div>
   </div>
 </dialog>

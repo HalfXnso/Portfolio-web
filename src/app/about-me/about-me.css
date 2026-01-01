@@ -8,12 +8,9 @@
   -webkit-background-clip: text;
   background-clip: text;
 
-  /* 3. Transparencia para revelar el gradiente */
   -webkit-text-fill-color: transparent;
   color: transparent;
-  /* Forzamos transparencia */
-
-  /* 4. Animación: Hace que la energía "fluya" */
+ 
   animation: shine 4s linear infinite;
 }
 @keyframes shine {

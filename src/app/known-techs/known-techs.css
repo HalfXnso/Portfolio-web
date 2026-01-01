@@ -1,13 +1,30 @@
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50%)); }
-  }
+/* Frontend: Tonos azules y cian (HTML, CSS, React, TS) */
+.frontend {
+  background: linear-gradient(135deg, #007acc 0%, #38bdf8 50%, #60a5fa 100%);
+}
 
-  .animate-scroll {
-    animation: scroll 30s linear infinite;
-    width: max-content;
-  }
+/* Backend: Verdes y azulados (Java, Spring Boot, Node) - Similar a tu ejemplo */
+.backend {
+  background: linear-gradient(135deg, #0b78ab 0%, #2dd4bf 45%, #4ade80 85%, #83cc16d0 100%);
+}
 
+/* DB (Bases de Datos): Tonos naranja, ámbar y tierra (MySQL, Oracle, PostgreSQL) */
+.db {
+  background: linear-gradient(135deg, #eaa225 0%, #e0a30a 40%, #983b08 100%);
+}
 
+/* Game Dev: Tonos rosados, fucsia y oscuros (Unity, C#, Unreal) */
+.game-dev {
+  background: linear-gradient(135deg, #ec4899 0%, #be185d 50%, #831843 100%);
+}
+
+/* IDE: Tonos violeta y azul profundo (VS Code, IntelliJ) */
+.ide {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 50%, #3b82f6 100%);
+}
+
+.version-control {
+  background: linear-gradient(135deg, #334155b3 0%, #475569 50%, #1e293b 100%);
+}
 
 

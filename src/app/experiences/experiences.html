@@ -1,31 +1,39 @@
-<section  class="p-2 pt-30 lg:mx-[15%] lg:h-full">
+<section class="p-2 flex flex-col gap-8 mt-40  lg:mx-[15%] lg:h-full">
   <h2 id="experiencias" class="text-center my-2 pt-2 text-5xl">Logros y experiencias</h2>
 
-<swiper-container #swiperContainer init="false" class="mx-auto my-4 h-[60dvh] p-1 bg-white  relative rounded-md">
-  <swiper-slide>
-    <div class="slide-content shadow-md  m-1   bg-gray-50 p-3 rounded-lg border-2 border-gray-200">
-      Formación DUAL - Desarrollo Web 1º DAM
-    </div>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="slide-content shadow-md  m-1   bg-gray-50 p-3 rounded-lg border-2 border-gray-200">
-      Formación DUAL - Desarrollo Web 2º DAM
-    </div>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="slide-content shadow-md  m-1   bg-gray-50 p-3 rounded-lg border-2 border-gray-200">
-      FCT - Desarrollo Full Stack
-    </div>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="slide-content shadow-md  m-1   bg-gray-50 p-3 rounded-lg border-2 border-gray-200">
-      Codethon 1ª Edición
-    </div>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="slide-content shadow-md  m-1   bg-gray-50 p-3 rounded-lg border-2 border-gray-200">
-      Codethon 2ª Edición
-    </div>
-  </swiper-slide>
-</swiper-container>
+  <swiper-container #swiperContainer init="false"
+    class="mx-auto my-4  p-1 w-full bg-[#f9f9f9e3]  relative rounded-md">
+    <swiper-slide>
+      <div class="slide-content">
+        <div class="h-full lg:flex mb-6 pl-1  mt-4 mx-4 ">
+          <img class="w-full lg:w-2/3 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)]"
+            src="./experiences/Codethon.png" alt="codethon">
+          <div class="m-2 pl-2 lg:border-l-2">
+            <h2 class="text-center ">Codethon 1ª Edición</h2>
+            <p class="text-sm">Desarrollo de una aplicación web para usuarios de vehículos eléctricos, creada con Angular y Spring Boot. El proyecto permite visualizar puntos de carga estáticos y consultar información detallada de cada cargador. Además, ofrece una funcionalidad de planificación de rutas dinámicas, permitiendo al usuario visualizar cargadores cercanos a su trayecto y añadir paradas personalizadas.</p>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <div class="slide-content shadow-md  m-1   bg-gray-50 p-3 rounded-lg border-2 border-gray-200">
+        Formación DUAL - Desarrollo Web 2º DAM
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <div class="slide-content shadow-md  m-1   bg-gray-50 p-3 rounded-lg border-2 border-gray-200">
+        FCT - Desarrollo Full Stack
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <div class="slide-content shadow-md  m-1   bg-gray-50 p-3 rounded-lg border-2 border-gray-200">
+        Codethon 1ª Edición
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <div class="slide-content shadow-md  m-1   bg-gray-50 p-3 rounded-lg border-2 border-gray-200">
+        Codethon 2ª Edición
+      </div>
+    </swiper-slide>
+  </swiper-container>
 </section>
