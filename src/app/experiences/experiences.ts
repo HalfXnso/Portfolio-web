@@ -42,10 +42,11 @@ export class Experiences implements AfterViewInit {
        .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
         position: absolute;
          bottom: 0;
+         margin-top: 5% !important;
         }
         .swiper-pagination-bullet-active {
           background: blue;
-          margin-top: 5%;
+
         }
         `,
       ],

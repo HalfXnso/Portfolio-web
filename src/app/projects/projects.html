@@ -1,23 +1,33 @@
-<section id="proyectos" class="flex flex-col lg:mx-[15%]  my-20 lg:my-50 h-full ">
-  <h2 class="text-center text-[#F2F2F2]   my-30  text-[24px] lg:text-5xl">Proyectos Realizados</h2>
-  <div class="w-full xl:w-11/12 2xl:w-9/12 px-6 border md:mx-auto grid grid-cols-1   gap-8  md:grid-cols-2 text-sm">
+<section id="proyectos" class="flex flex-col lg:mx-[15%] mx-[8%] my-20 lg:my-50 h-full ">
+  <h2 class="text-center text-[#F2F2F2]   my-30  text-[24px] lg:text-5xl">Algunos de mis proyectos</h2>
+  <div class="w-full xl:w-11/12 2xl:w-9/12 px-2 lg:px-6 md:mx-auto grid grid-cols-1  gap-8  md:grid-cols-2 text-sm">
 
     @for (item of proyectos; track $index) {
     <button (click)="openModal(item)"
-      class="{{item.background_class}}  aspect-video group cursor-pointer  shadow-[#999999] shadow-[0px_0px_5px_1px] hover:shadow-[0px_0px_12px_2px] border-0 relative  rounded-2xl">
+      class="{{item.background_class}} my-2 aspect-video group cursor-pointer  shadow-[#999999] shadow-[0px_0px_5px_1px] hover:shadow-[0px_0px_12px_2px] border-0 relative  rounded-2xl">
 
       <button
         class="btn btn-sm btn-circle hidden group-hover:block hover:bg-gray-400 hover:border-gray-400 bg-gray-500 border-gray-500 shadow-black shadow-[0px_0px_5px_1px] text-white z-40 absolute right-2 top-2">+</button>
 
-      <div class="absolute inset-0 px-6 pt-6.5 lg:pt-10 transition-all  duration-300 group-hover:p-0">
+      <div class="absolute hover-3d inset-0 px-6 pt-6.5 lg:pt-10 transition-all  duration-300 group-hover:p-0">
 
         <img src="{{item.src}}" alt="Voltpath"
           class="w-full h-full object-cover rounded-t-md transition-all duration-300 group-hover:rounded-2xl" />
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
+
 
     </button>
 
- <dialog #modal class="modal">
+    <dialog #modal class="modal">
       <div
         class="modal-box w-full lg:w-5/12 lg:rounded-t-2xl h-screen lg:mt-12 rounded-b-none p-0 max-w-5xl  overflow-hidden">
         <div method="dialog" class="modal-backdrop text-black h-full">
@@ -37,11 +47,11 @@
             </div>
 
             <div class="border mt-[10%]">
-             {{usedProject?.descripcion}}
+              {{usedProject?.descripcion}}
             </div>
 
             {{usedProject?.name}}
-
+            <app-project-info [projectName]="usedProject?.name"></app-project-info>
           </div>
 
         </div>

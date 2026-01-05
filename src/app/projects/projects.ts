@@ -2,10 +2,11 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 import * as Plyr from 'plyr';
 import { Project, Tecnologias } from '../interfaces/interfaces';
 import { Techs } from '../services/techs';
+import { ProjectInfo } from "../project-info/project-info";
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [ProjectInfo],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })
@@ -25,7 +26,7 @@ export class Projects implements OnInit {
       descripcion: 'Proyecto de cargadores eléctricos para todo el mundo',
       url: 'zSXKfdeja-Q',
       startTime: 0,
-      techs: ['angular', 'spring-boot', 'mysql']
+      techs: ['Angular', 'Spring Boot', 'MySQL']
     },
     {
       name: 'genesis',
@@ -34,26 +35,9 @@ export class Projects implements OnInit {
       descripcion: 'Organización de evento en valencia.',
       url: 'IVcwZL_f8HU',
       startTime: 10,
-      techs: ['angular', 'mysql']
-    },
-    {
-      name: 'genesis',
-      src: './thumbnails/Genesis.png',
-      background_class: 'genesis-background',
-      descripcion: 'aaaa',
-      url: 'IVcwZL_f8HU',
-      startTime: 0,
-      techs: ['angular', 'spring-boot', 'mysql']
-    },
-    {
-      name: 'genesis',
-      src: './thumbnails/Genesis.png',
-      background_class: 'genesis-background',
-      descripcion: '',
-      url: 'IVcwZL_f8HU',
-      startTime: 0,
-      techs: ['angular', 'spring-boot', 'mysql']
-    },
+      techs: ['Angular', 'MySQL']
+    }
+
   ]
 
 
@@ -142,12 +126,14 @@ export class Projects implements OnInit {
 
     project.techs.forEach(techName => {
 
-      const tecnologia = this.techs.find(t => t.name === techName);
+      const tecnologia = this.techs.find(t => t.name === techName, console.log(techName, "GG"));
       if (tecnologia) {
         this.usedTechs.push(tecnologia.url);
+        console.log(this.usedTechs);
       }
 
     });
+    console.log(this.usedTechs);
 
   }
 

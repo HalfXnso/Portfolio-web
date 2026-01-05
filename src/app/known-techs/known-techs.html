@@ -11,7 +11,7 @@
         <option value="DB">Database</option>
         <option value="IDE">IDE</option>
         <option value="Game Dev.">Game Dev.</option>
-        <option value="Version Control">VC</option>
+        <option value="Others">VC</option>
 
       </select>
     </div>
@@ -47,7 +47,7 @@
         <option value="DB">Database</option>
         <option value="IDE">IDE</option>
         <option value="Game Dev.">Game Dev.</option>
-        <option value="Version Control">VC</option>
+        <option value="Others">VC</option>
       </select>
 
       <!-- Mostrar según selección -->
@@ -84,13 +84,13 @@
     <div method="dialog" class="modal-backdrop flex flex-col h-full  text-black">
       <button (click)="closeModal()"
         class="btn btn-sm btn-circle hover:bg-gray-400 hover:border-gray-400 bg-gray-500 border-gray-500 shadow-black shadow-[0px_0px_5px_1px] text-white z-20 absolute right-2 top-2">✕</button>
-      <div class="mx-auto w-[80%] flex flex-col items-center justify-center h-50 font-bold uppercase mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] border-b">
+      <div
+        class="mx-auto w-[80%] flex flex-col items-center justify-center h-50 font-bold uppercase mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] border-b">
         <img class="w-40" src="{{usedTech?.url}}" alt="{{usedTech?.name}}">
         {{usedTech?.name}}
       </div>
-      <div class="mt-2">
+      <div [innerHTML]="usedTech?.descripcion" class="mt-2">
 
-        {{usedTech?.descripcion}}
       </div>
     </div>
   </div>

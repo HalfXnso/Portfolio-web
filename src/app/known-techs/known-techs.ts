@@ -25,7 +25,7 @@ export class KnownTechs implements OnInit {
     { titulo: 'Backend', tipo: 'Backend' },
     { titulo: 'Extra', tipo: 'Game Dev.' },
     { titulo: 'IDE', tipo: 'IDE' },
-    { titulo: 'Version Control', tipo: 'Version Control' },
+    { titulo: 'Others', tipo: 'Others' },
   ];
   /* Colores de la gráfica, cambiar cuando sea necesario */
   colors = [
@@ -68,7 +68,7 @@ export class KnownTechs implements OnInit {
 
   private createChart(): void {
     const color = d3.scaleOrdinal<string>()
-      .domain(['Frontend', 'Backend', 'DB', 'Game Dev.', 'IDE', 'Version Control'])
+      .domain(['Frontend', 'Backend', 'DB', 'Game Dev.', 'IDE', 'Others'])
       .range([
         'frontend',
         'backend',
