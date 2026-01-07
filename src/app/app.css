@@ -66,4 +66,5 @@
     radial-gradient(at 100% 0%, rgba(216, 70, 239, 0.329) 0px, transparent 50%),
     radial-gradient(at 50% 100%, rgba(34, 197, 94, 0.329) 0px, transparent 50%);
   background-attachment: fixed;
+  padding-bottom: 6%;
 }

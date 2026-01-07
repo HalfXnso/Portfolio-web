@@ -26,7 +26,7 @@ export class Projects implements OnInit {
       descripcion: 'Proyecto de cargadores eléctricos para todo el mundo',
       url: 'zSXKfdeja-Q',
       startTime: 0,
-      techs: ['Angular', 'Spring Boot', 'MySQL']
+      techs: ['Angular 18+', 'Java','Html 5', 'Css 3']
     },
     {
       name: 'genesis',
@@ -35,7 +35,7 @@ export class Projects implements OnInit {
       descripcion: 'Organización de evento en valencia.',
       url: 'IVcwZL_f8HU',
       startTime: 10,
-      techs: ['Angular', 'MySQL']
+      techs: ['Angular 18+', 'Spring Boot', 'PostgreSQL', 'Java','Html 5', 'Css 3','Tailwind css']
     }
 
   ]

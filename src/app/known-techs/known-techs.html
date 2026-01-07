@@ -11,12 +11,12 @@
         <option value="DB">Database</option>
         <option value="IDE">IDE</option>
         <option value="Game Dev.">Game Dev.</option>
-        <option value="Others">VC</option>
+        <option value="Others">Otros</option>
 
       </select>
     </div>
-    <div class="relative w-full md:w-5/6 lg:w-4/6 xl:w-3/6">
-      <div class="relative w-full flex justify-center aspect-square  mx-auto">
+    <div class="relative w-full md:w-5/6 lg:w-4/6 xl:w-3/6 2xl:w-5/12">
+      <div class="relative w-full flex  aspect-square  mx-auto">
         @for (node of nodes; track $index) {
         <button (click)="openModal(node)"
           class="absolute cursor-pointer shadow-[2px_2px_2px_rgba(0,0,0,0.341)] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center hover:brightness-125 active:brightness-125 transition-all duration-300"
@@ -33,65 +33,22 @@
     </div>
   </div>
 </section>
-<dialog id="my_modal_4" class="modal">
-  <div class="modal-box h-5/6 bg-red5 overflow-hidden">
-    <div method="dialog" class="modal-backdrop h-full border text-black  p-2">
-      <form method="dialog">
-        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-      </form>
 
-      <select class="select my-2" [(ngModel)]="categoriaSeleccionada">
-        <option value="todos">Todos</option>
-        <option value="Frontend">Frontend</option>
-        <option value="Backend">Backend</option>
-        <option value="DB">Database</option>
-        <option value="IDE">IDE</option>
-        <option value="Game Dev.">Game Dev.</option>
-        <option value="Others">VC</option>
-      </select>
-
-      <!-- Mostrar según selección -->
-      @if (categoriaSeleccionada === 'todos') {
-      <div class="h-5/6 md:h-full overflow-y-scroll">
-        @for (categoria of categorias; track categoria.tipo) {
-        <h1>{{categoria.titulo}}</h1>
-        @for (tech of getTechByTipo(categoria.tipo); track tech.name) {
-        <div class="text-lg flex font-bold text-center">
-          {{tech.name}}
-          <img class="w-8" [src]="tech.url" [alt]="tech.name">
-        </div>
-        }
-        }
-      </div>
-      } @else {
-      <div class="h-full overflow-scroll">
-        <h1>{{categoriaSeleccionada}}</h1>
-        @for (tech of getTechByTipo(categoriaSeleccionada); track tech.name) {
-        <div class="text-lg flex font-bold text-center">
-          {{tech.name}}
-          <img class="w-8" [src]="tech.url" [alt]="tech.name">
-        </div>
-        }
-      </div>
-      }
-    </div>
-  </div>
-
-
-</dialog>
 <dialog #techModal class="modal">
-  <div class="modal-box h-5/6 overflow-hidden">
-    <div method="dialog" class="modal-backdrop flex flex-col h-full  text-black">
+  <div class="modal-box  overflow-hidden">
+    <div method="dialog" class="modal-backdrop relative flex flex-col h-full mx-auto text-black">
       <button (click)="closeModal()"
-        class="btn btn-sm btn-circle hover:bg-gray-400 hover:border-gray-400 bg-gray-500 border-gray-500 shadow-black shadow-[0px_0px_5px_1px] text-white z-20 absolute right-2 top-2">✕</button>
+        class="btn btn-sm btn-circle hover:bg-gray-400 hover:border-gray-400 bg-gray-500 border-gray-500 shadow-black shadow-[0px_0px_5px_1px] text-white z-20 absolute -right-4 -top-4">✕</button>
       <div
-        class="mx-auto w-[80%] flex flex-col items-center justify-center h-50 font-bold uppercase mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] border-b">
-        <img class="w-40" src="{{usedTech?.url}}" alt="{{usedTech?.name}}">
+        class="mx-auto w-[80%] flex flex-col gap-2 items-center justify-center  font-bold uppercase mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] border-b pb-4">
+        <img class="w-20 md:w-30" src="{{usedTech?.url}}" alt="{{usedTech?.name}}">
         {{usedTech?.name}}
       </div>
-      <div [innerHTML]="usedTech?.descripcion" class="mt-2">
+      <div [innerHTML]="usedTech?.descripcion" class="mt-4 text-[14px] md:text-[16px]">
 
       </div>
+      <img class="w-20 md:w-30 absolute opacity-20  left-[37%] top-1/2" src="{{usedTech?.url}}" alt="{{usedTech?.name}}">
+
     </div>
   </div>
 </dialog>

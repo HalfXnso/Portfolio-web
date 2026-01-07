@@ -9,7 +9,6 @@
   </div>
   <div
     class="relative w-[90%] font-bold mx-auto rounded-md shadow-[#ffffff95] shadow-[0px_1px_30px_1px] lg:shadow-[0px_0px_40px_2px]  flex justify-center">
-    <img src="./clover.svg" alt="gg" class="absolute  w-10 top-5/12 left-5/12 ml-10">
     <img src="./Aura-use.png" class="lg:w-full rounded-md h-full " alt="aura">
 
     <div
@@ -21,7 +20,7 @@
     </div>
 
     <div
-      class="text-rotate xl:text-[16px] absolute md:bg-white/0 px-1 md:px-0 bg-white/20 backdrop-blur-md rounded-md mx-auto top-1/2 md:left-1 md:top-1/2 text-xl flex justify-center">
+      class="text-rotate  xl:text-[16px] absolute md:bg-white/0 px-1 md:px-0 bg-white/20 backdrop-blur-md rounded-md mx-auto top-1/2 md:left-1 md:top-1/2  flex justify-center">
       <span class="justify-items-center">
         <span>Actitud Abierta Y Flexible</span>
         <span>Iniciativa Propia</span>
@@ -33,7 +32,7 @@
       </span>
     </div>
     <button
-      class="btn mx-auto absolute border-0 top-9/12 md:top-5/6  md:w-[20dvh] mb-2 hover:bg-white/50 bg-white/30 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm text-sm "
+      class="btn mx-auto absolute border-0 top-8/12 md:top-5/6  md:w-[20dvh]  hover:bg-white/50 bg-white/30 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm text-sm "
       onclick="my_modal_2.showModal()">Sobre mí</button>
   </div>
 
@@ -53,34 +52,32 @@
   </div>
 </section>
 <dialog id="my_modal_2" class="modal">
-  <div class="modal-box h-5/6  bg-white/80 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm">
+  <div class="modal-box  main-projects-container rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm">
     <div method="dialog" class="modal-backdrop relative text-black ">
       <form method="dialog">
-        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-0 top-0">✕</button>
       </form>
-      <img class="border-black/20 border rounded shadow-[2px_2px_2px_rgba(0,0,0,0.341)] w-[55%] mx-auto"
+      <img class="border-black/20 border rounded shadow-[2px_2px_2px_rgba(0,0,0,0.341)] w-[55%] lg:w-[45%] mx-auto"
         src="./Profilepic.JPG" alt="profilepic">
-      <div class="py-2 text-start text-sm">
-        <div class="flex py-2 justify-between items-center">
-          <div class="flex gap-1 items-center"> <img src="./Burjassot.png" class="w-5" alt="burjassot"> 46100 ·
+      <div class="py-2 px-1 font-bold text-[12px] md:text-[14px] lg:text-[16px]   text-start text-sm">
+        <div class="flex py-2  justify-between items-center">
+          <div class="flex gap-1 items-center"> <img src="./Burjassot.png" class="w-5 hidden lg:block" alt="burjassot"> 46100 ·
             Valencia,España</div>
           <div class="flex items-center "><img src="./Cumple.svg" class="w-5" alt="burjassot">07/11/2000</div>
 
         </div>
-        <div class="border-t ">
-          <p>
-            ¡Hola! Mi nombre es Alfonso y espero que te guste mi portfolio web.
-          </p>
-          <p class="border-t pt-2">Soy un programador recién graduado que busca una oportunidades para poder seguir adquiriendo
-            conocimientos sobre el mundo de la programación.</p>
+        <div class="border-t py-4 font-mono  border-gray-400 ">
+            ¡Hola! Mi nombre es Alfonso Gaitán y espero que te guste mi <span class="text-blue-500">portfolio web</span>.
+          Soy un programador recién graduado que busca una oportunidades para poder seguir adquiriendo
+            conocimientos sobre el mundo de la programación.
         </div>
       </div>
       <section class="flex flex-col gap-2">
         <!--Certificados-->
         <div
-          class="collapse hover:bg-white/50 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm border-black/20 border">
+          class="collapse  bg-white/80 hover:bg-white/50 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm border-black/20 border">
           <input type="checkbox" />
-          <div class="collapse-title flex justify-between px-4 font-semibold">
+          <div class="collapse-title flex justify-between px-4  font-semibold">
             Certificados
 
             <svg class="w-8 p-0 m-0" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -107,10 +104,10 @@
 
         <!-- Idiomas -->
         <div
-          class="collapse  hover:bg-white/50 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm border-black/20 border">
+          class="collapse  bg-white/80 hover:bg-white/50 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm border-black/20 border">
           <input type="checkbox" />
           <div class="collapse-title flex justify-between px-4 font-semibold">Idiomas
-            <img src="./language.svg" class="w-6" alt="language-icon">
+            <img src="./language.svg" class=" w-6" alt="language-icon">
           </div>
           <div class="collapse-content text-sm">
             @for (idioma of idiomas; track $index) {
@@ -126,7 +123,7 @@
         </div>
         <!-- Idiomas -->
         <div
-          class="collapse  hover:bg-white/50 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm border-black/20 border">
+          class="collapse  bg-white/80 hover:bg-white/50 rounded-md shadow-[2px_2px_2px_rgba(0,0,0,0.341)] backdrop-blur-sm border-black/20 border">
           <input type="checkbox" />
           <div class="collapse-title flex justify-between px-4 font-semibold">Información adicional
             <img src="./dots-vertical.svg" class="w-6" alt="language-icon">
