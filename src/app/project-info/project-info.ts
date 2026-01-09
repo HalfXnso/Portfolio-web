@@ -7,5 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './project-info.css',
 })
 export class ProjectInfo {
- @Input() projectName?: string;
+  @Input() projectName?: string;
+  @Input() projectDesc?: string;
+
 }

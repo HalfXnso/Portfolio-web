@@ -1,0 +1,39 @@
+.voltpath-background {
+
+  background: linear-gradient(135deg, #0b78ab 0%, #2dd4bf 45%, #4ade80 85%, #83cc16d0 100%);
+}
+
+.voltpath-text-gradient {
+  font-weight: bold;
+  background-image: linear-gradient(135deg, #0b78ab 0%, #2dd4bf 45%, #4ade80 85%, #83cc16d0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Definimos el grosor y color del borde */
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.347);
+
+  /* IMPORTANTE: Pone el borde por debajo del gradiente */
+  paint-order: stroke fill;
+
+  animation: shine 4s linear infinite;
+}
+
+.genesis-background {
+  background: linear-gradient(135deg, #EC28E9 0%, #8b5cf6 45%, #4272D1 85%, #363DBD 100%);
+}
+.genesis-text-gradient {
+  font-weight: bold;
+  background-image: linear-gradient(135deg, #EC28E9 0%, #8b5cf6 45%, #4272D1 85%, #363DBD 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Definimos el grosor y color del borde */
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.347);
+
+  /* IMPORTANTE: Pone el borde por debajo del gradiente */
+  paint-order: stroke fill;
+
+  animation: shine 4s linear infinite;
+}

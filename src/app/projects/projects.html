@@ -1,14 +1,33 @@
 <section id="proyectos" class="flex flex-col lg:mx-[15%] mx-[8%] my-20 lg:my-50 h-full ">
-  <h2 class="text-center text-[#F2F2F2]   my-30  text-[24px] lg:text-5xl">Algunos de mis proyectos</h2>
-  <div class="w-full xl:w-11/12 2xl:w-9/12 px-2 lg:px-6 2xl:px-24 md:mx-auto grid grid-cols-1  gap-8  md:grid-cols-2 text-sm">
+  <h2 class="text-center text-[#F2F2F2]   my-30 text-[22px] md:text-[28px] lg:text-[36px] xl:text-[52px]">Algunos de mis
+    proyectos</h2>
+  <div
+    class="w-full xl:w-11/12 2xl:w-9/12 px-2 lg:px-6 2xl:px-24 md:mx-auto grid grid-cols-1  gap-8  md:grid-cols-2 text-sm">
 
     @for (item of proyectos; track $index) {
+
     <button (click)="openModal(item)"
       class="{{item.background_class}} my-2 aspect-video group cursor-pointer  shadow-[#999999] shadow-[0px_0px_5px_1px] hover:shadow-[0px_0px_12px_2px] border-0 relative  rounded-2xl">
 
       <button
         class="btn btn-sm btn-circle hidden group-hover:block hover:bg-gray-400 hover:border-gray-400 bg-gray-500 border-gray-500 shadow-black shadow-[0px_0px_5px_1px] text-white z-40 absolute right-2 top-2">+</button>
 
+      @if(item.background_class === 'in-progress'){
+      <div class="aspect-video ">
+
+        <img src="{{item.src}}" alt="Voltpath" class="w-4/6 h-full mx-auto object-cover" />
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+      </div>
+      } @else {
       <div class="absolute hover-3d  inset-0 px-6 pt-6.5 lg:pt-10 transition-all  duration-300 group-hover:p-0">
 
         <img src="{{item.src}}" alt="Voltpath"
@@ -24,15 +43,15 @@
         <div></div>
       </div>
 
-
+      }
     </button>
 
     <dialog #modal class="modal">
       <div
-        class="modal-box w-full lg:w-5/12 lg:rounded-t-2xl h-screen lg:mt-12 rounded-b-none p-0 max-w-5xl  overflow-hidden">
-        <div method="dialog" class="modal-backdrop text-black h-full">
+        class="modal-box w-full lg:w-5/12 lg:rounded-t-2xl h-screen pb-10 lg:mt-12 rounded-b-none p-0 max-w-5xl  overflow-hidden">
+        <div method="dialog" class="modal-backdrop text-black  h-full">
           <div
-            class="h-full overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            class="h-full overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
 
             <button (click)="close()"
               class="btn btn-sm btn-circle hover:bg-gray-400 hover:border-gray-400 bg-gray-500 border-gray-500 shadow-black shadow-[0px_0px_5px_1px] text-white z-20 absolute right-3 top-4">✕</button>
@@ -40,18 +59,19 @@
             <div #player data-plyr-provider="youtube" [attr.data-plyr-embed-id]="item.url">
             </div>
 
-            <div class="flex w-full">
+            <div class="flex justify-around px-5 py-4    bg-gray-300/20">
               @for (url of usedTechs; track $index) {
-              <img class="w-8" src="{{url}}" alt="usedTec">
+              <img class="h-8 md:h-10 lg:h-13" src="{{url}}" alt="usedTec">
               }
             </div>
-
-            <div class="border mt-[10%]">
-              {{usedProject?.descripcion}}
-            </div>
-
-            {{usedProject?.name}}
-            <app-project-info [projectName]="usedProject?.name"></app-project-info>
+            <!-- Esto es un apaño hasta que termine de poner la información como quiero -->
+            @if (usedProject?.name === 'Scriptable Objects' || usedProject?.name === 'Voltpath v2') {
+            <h2 class="text-[22px] genesis-text-gradient text-center md:text-[28px] lg:text-[36px]  my-8 xl:text-[52px]">
+              {{usedProject?.name}}</h2>
+            <div class="text-center mx-6 mt-6 text-[16px]" [innerHTML]="usedProject?.descripcion"></div>
+            }
+            <app-project-info [projectDesc]="usedProject?.descripcion"
+              [projectName]="usedProject?.name"></app-project-info>
           </div>
 
         </div>

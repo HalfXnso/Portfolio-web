@@ -20,23 +20,41 @@ export class Projects implements OnInit {
   currentVideo: any = null;
   proyectos: Project[] = [
     {
-      name: 'voltpath',
+      name: 'Voltpath',
       src: './thumbnails/Voltpath.jpg',
       background_class: 'voltpath-background',
-      descripcion: 'Proyecto de cargadores eléctricos para todo el mundo',
+      descripcion: 'Aplicación web orientada a usuarios de vehículos eléctricos, permitiendoles visualizar distintos puntos de recarga, así como consultar información detallada sobre cada cargador. <p> Además, ofrece la posibilidad de mostrar los puntos de carga cercanos a una ruta concreta, permitiendo al usuario añadir y seleccionar diferentes paradas según sus necesidades.</p>',
       url: 'zSXKfdeja-Q',
-      startTime: 0,
-      techs: ['Angular 18+', 'Java','Html 5', 'Css 3']
+      startTime: 8,
+      techs: ['Angular 18+', 'Java', 'Html 5', 'Css 3']
     },
     {
-      name: 'genesis',
+      name: 'Genesis',
       src: './thumbnails/Genesis.png',
       background_class: 'genesis-background',
-      descripcion: 'Organización de evento en valencia.',
+      descripcion: 'Aplicación web orientada a la gestión y descubrimiento de eventos en la ciudad de Valencia. La aplicación permite a los usuarios descubrir eventos creados por otras personas o empresas, inscribirse en ellos, dejar opiniones, aportar feedback y valorar los eventos mediante likes y dislikes. <p>Además, incluye un <b>calendario dinámico</b> donde cada usuario puede visualizar los eventos a los que está apuntado, facilitando la organización y evitando olvidos.</p>',
       url: 'IVcwZL_f8HU',
-      startTime: 10,
-      techs: ['Angular 18+', 'Spring Boot', 'PostgreSQL', 'Java','Html 5', 'Css 3','Tailwind css']
-    }
+      startTime: 6,
+      techs: ['Angular 18+', 'Spring Boot', 'PostgreSQL', 'Java', 'Html 5', 'Css 3', 'Tailwind css']
+    },
+    {
+      name: 'Scriptable Objects',
+      src: './thumbnails/ScriptableObjects.png',
+      background_class: 'pokemon-background',
+      descripcion: 'Proyecto hecho durante mi etapa formativa con el objetivo de explicar los Scriptable Objects de Unity',
+      url: 'dcESeDcvjyw',
+      startTime: 0,
+      techs: ['C#', 'Unity']
+    },
+    {
+      name: 'Voltpath v2',
+      src: './in-progress.gif',
+      background_class: 'in-progress',
+      descripcion: 'Voltpath v2 es la evolución individual del proyecto original, orientada a aprender y aplicar un <b>desarrollo full stack</b> más profesional. En el frontend estoy trabajando con <b>Angular 20</b> para construir una aplicación modular y mantenible, gestionando rutas, servicios y estado de la aplicación, además de la integración con mapas interactivos para el cálculo de rutas y paradas. En el backend estoy desarrollando una <b>API REST</b> con <b>Spring Boot</b>, enfocada en la gestión de usuarios, autenticación y persistencia de datos, aplicando buenas prácticas como separación por capas (controller, service, repository) y uso de JPA/Hibernate. El objetivo principal del proyecto es comprender el flujo completo entre frontend y backend, la protección de recursos mediante autenticación basada en tokens y el diseño de una arquitectura escalable sobre la que seguir incorporando funcionalidades.',
+      url: 'MzEFeIRJ0eQ',
+      startTime: 0,
+      techs: ['Angular 18+', 'Spring Boot', 'PostgreSQL', 'Java', 'Html 5', 'Css 3', 'Tailwind css']
+    },
 
   ]
 
@@ -77,7 +95,6 @@ export class Projects implements OnInit {
       // Opciones generales
       controls: [
         'play',
-        'progress',
         'mute',
       ],
       keyboard: { focused: true, global: false },

@@ -4,16 +4,26 @@
 }
 
 .genesis-background {
-  background: linear-gradient(135deg,  #EC28E9 0%,#8b5cf6 45%, #4272D1 85%, #363DBD 100%);
+  background: linear-gradient(135deg, #EC28E9 0%, #8b5cf6 45%, #4272D1 85%, #363DBD 100%);
 }
 
 .mas-fondos {
   background: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
 }
 
-
-
-.modal .modal-box::-webkit-scrollbar {
-    display: none !important;
+.pokemon-background {
+  background: linear-gradient(180deg,
+      #4d91e6 0%,
+      #79B5FE 40%,
+      #E1F5FE 65%,
+      #568806 85%,
+      #2E7D32 100%
+    );
 }
 
+.in-progress{
+  background: linear-gradient(45deg, #0b0b0b 0%, #3a2b22 12%, #7e786f 38%, #7e786f 60%, #3a2b22 78%, #0b0b0b 100%);
+}
+.modal .modal-box::-webkit-scrollbar {
+  display: none !important;
+}

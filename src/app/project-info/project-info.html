@@ -1,6 +1,81 @@
-@if (projectName === 'voltpath') {
-  <p>voltapth!</p>
-}
-@else if (projectName === 'genesis') {
-  <p>genesis!</p>
-}
+<section class="lg:text-[16px]  pb-6 text-center">
+
+  @if (projectName === 'Voltpath') {
+
+  <h2 class="text-[22px] voltpath-text-gradient md:text-[28px] lg:text-[36px]  my-8 xl:text-[52px]">
+    {{projectName}}</h2>
+
+  <div class="px-8 " [innerHTML]="projectDesc"></div>
+  <div class="  bg-gray-300/20 my-6 py-2">
+    <div class="px-8 ">
+      <h3 class="text-xl lg:text-2xl  my-6 underline">Contexto:</h3>
+      <p>Este proyecto extraescolar lo llevé a cabo durante el primer curso de mi ciclo formativo junto a mis 3 compañeros de clase,
+        por lo que su alcance técnico puede llegar a ser un poco más básico.</p>
+      <p>La idea surgió de la creciente expansión del mercado de los vehículos electricos en españa y la importancia que
+        consideramos que podía tener que el usuario tuviera conocimiento constantemente de la ubicación de los
+        cargadores
+        públicos, su información y su disponibilidad.</p>
+    </div>
+    <div class="flex flex-col sm:flex-row  my-6 gap-4 sm:gap-0  items-center">
+      <p class="px-8">Se podría decir que el tiempo nos dió la razón porque en abril de ese mismo año hubo un atasco de
+        horas al
+        volver de vacaciones de semana santa.</p>
+      <div class="py-4 pl-4 border-r-0 ml-10 sm:ml-0 border-white/30 voltpath-background rounded-l-lg border">
+        <img class=" rounded-l-lg  " src="./project-images/atasco.png" alt="atasco">
+      </div>
+
+    </div>
+  </div>
+  <div class="mt-12">
+    <h3 class="text-xl lg:text-2xl  my-6 underline">Características interesantes</h3>
+
+    <div class="flex flex-col-reverse sm:flex-row gap-4 sm:gap-0   items-center">
+
+      <div class="py-4 mt-4 pr-4 mr-10 sm:mr-0 border-l-0 border-white/30 voltpath-background rounded-r-lg border">
+        <img class=" rounded-r-lg w-340" src="./project-images/leaflet.png" alt="atasco">
+      </div>
+      <div class="flex flex-col items-center">
+        <h4 class="text-lg mb-4">Uso de mapa de <a class="text-blue-400" href="https://leafletjs.com/index.html"
+            target="_blank">Leaflet</a> :</h4>
+        <p class="px-4 ">Se podría decir que el tiempo nos dió la razón porque en abril de ese mismo año hubo un atasco
+          de
+          horas al
+          volver de vacaciones de semana santa.</p>
+      </div>
+    </div>
+  </div>
+
+
+  }
+  @else if (projectName === 'Genesis') {
+
+    <h2 class="text-[22px] genesis-text-gradient md:text-[28px] lg:text-[36px]  my-8 xl:text-[52px]">
+    {{projectName}}</h2>
+
+  <div class="px-8 " [innerHTML]="projectDesc"></div>
+  <div class="  bg-gray-300/20 my-6 py-6">
+    <div class="px-8 ">
+      <h3 class="text-xl lg:text-2xl  mb-6 underline">Contexto:</h3>
+      <p>Este proyecto extraes lo llevé a cabo durante el segundo curso de mi ciclo formativo junto a otros 3 compañeros,
+        y su alcance técnico empieza a ser ya robusto.</p>
+      <p>Introducir descripción(Para más tarde)</p>
+    </div>
+
+  </div>
+  <div class="mt-12">
+    <h3 class="text-xl lg:text-2xl  my-6 underline">Características interesantes</h3>
+
+    <div class="flex flex-col-reverse sm:flex-row gap-4 sm:gap-0   items-center">
+
+      <div class="py-4 mt-4 pr-4 mr-10 sm:mr-0 border-l-0  genesis-background rounded-r-lg ">
+        <img class=" rounded-r-lg " src="./project-images/calendar.png" alt="atasco">
+      </div>
+      <div class="flex flex-col items-center">
+        <h4 class="text-lg px-4 mb-4">Integración del componente del calendario usando <a class="text-blue-400" target="_blank" href="https://fullcalendar.io/">FullCalendarJs</a> :</h4>
+        <p class="px-4 ">Lo cual, de primera instancia fue complicado pero conseguí entender su funcionamiento.</p>
+      </div>
+    </div>
+  </div>
+
+  }
+</section>

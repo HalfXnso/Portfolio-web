@@ -1,5 +1,5 @@
 <section class="mt-28  flex mx-[15%] items-center flex-col relative  ">
-  <h2 class="rounded-md backdrop-blur-md text-center  my-15 p-2  text-[24px] lg:text-5xl">Tecnologías conocidas
+  <h2 class="rounded-md backdrop-blur-md text-center  my-15 p-2 text-[22px] md:text-[28px] lg:text-[36px] xl:text-[52px]">Tecnologías conocidas
   </h2>
 
   <div class="w-full flex flex-col gap-6 items-center  my-20">
@@ -37,8 +37,8 @@
 <dialog #techModal class="modal">
   <div class="modal-box  overflow-hidden">
     <div method="dialog" class="modal-backdrop relative flex flex-col h-full mx-auto text-black">
-      <button (click)="closeModal()"
-        class="btn btn-sm btn-circle hover:bg-gray-400 hover:border-gray-400 bg-gray-500 border-gray-500 shadow-black shadow-[0px_0px_5px_1px] text-white z-20 absolute -right-4 -top-4">✕</button>
+      <button (click)="closeModal()" class="btn btn-sm btn-circle btn-ghost absolute right-0 top-0">✕</button>
+
       <div
         class="mx-auto w-[80%] flex flex-col gap-2 items-center justify-center  font-bold uppercase mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] border-b pb-4">
         <img class="w-20 md:w-30" src="{{usedTech?.url}}" alt="{{usedTech?.name}}">
@@ -47,7 +47,8 @@
       <div [innerHTML]="usedTech?.descripcion" class="mt-4 text-[14px] md:text-[16px]">
 
       </div>
-      <img class="w-20 md:w-30 absolute opacity-20  left-[37%] top-1/2" src="{{usedTech?.url}}" alt="{{usedTech?.name}}">
+      <img class="w-20 md:w-30 absolute opacity-20  left-[37%] top-1/2" src="{{usedTech?.url}}"
+        alt="{{usedTech?.name}}">
 
     </div>
   </div>
