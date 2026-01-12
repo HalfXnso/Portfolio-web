@@ -23,7 +23,7 @@ export class Projects implements OnInit {
       name: 'Voltpath',
       src: './thumbnails/Voltpath.jpg',
       background_class: 'voltpath-background',
-      descripcion: 'Aplicación web orientada a usuarios de vehículos eléctricos, permitiendoles visualizar distintos puntos de recarga, así como consultar información detallada sobre cada cargador. <p> Además, ofrece la posibilidad de mostrar los puntos de carga cercanos a una ruta concreta, permitiendo al usuario añadir y seleccionar diferentes paradas según sus necesidades.</p>',
+      descripcion: 'Aplicación web para usuarios de vehículos eléctricos que permite localizar puntos de recarga, consultar sus detalles y planificar paradas a lo largo de una ruta.',
       url: 'zSXKfdeja-Q',
       startTime: 8,
       techs: ['Angular 18+', 'Java', 'Html 5', 'Css 3']
@@ -32,7 +32,7 @@ export class Projects implements OnInit {
       name: 'Genesis',
       src: './thumbnails/Genesis.png',
       background_class: 'genesis-background',
-      descripcion: 'Aplicación web orientada a la gestión y descubrimiento de eventos en la ciudad de Valencia. La aplicación permite a los usuarios descubrir eventos creados por otras personas o empresas, inscribirse en ellos, dejar opiniones, aportar feedback y valorar los eventos mediante likes y dislikes. <p>Además, incluye un <b>calendario dinámico</b> donde cada usuario puede visualizar los eventos a los que está apuntado, facilitando la organización y evitando olvidos.</p>',
+      descripcion: 'Aplicación web para descubrir y gestionar eventos en Valencia, donde los usuarios pueden inscribirse, valorar y dejar opiniones, además de organizar sus eventos en un calendario personal.',
       url: 'IVcwZL_f8HU',
       startTime: 6,
       techs: ['Angular 18+', 'Spring Boot', 'PostgreSQL', 'Java', 'Html 5', 'Css 3', 'Tailwind css']

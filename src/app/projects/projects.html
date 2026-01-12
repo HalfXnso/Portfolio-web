@@ -48,7 +48,7 @@
 
     <dialog #modal class="modal">
       <div
-        class="modal-box w-full lg:w-5/12 lg:rounded-t-2xl h-screen pb-10 lg:mt-12 rounded-b-none p-0 max-w-5xl  overflow-hidden">
+        class="modal-box w-full sm:w-7/12 xl:w-5/12 sm:rounded-t-2xl h-screen pb-10 sm:mt-12 rounded-b-none p-0 max-w-5xl  overflow-hidden">
         <div method="dialog" class="modal-backdrop text-black  h-full">
           <div
             class="h-full overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
@@ -65,11 +65,7 @@
               }
             </div>
             <!-- Esto es un apaño hasta que termine de poner la información como quiero -->
-            @if (usedProject?.name === 'Scriptable Objects' || usedProject?.name === 'Voltpath v2') {
-            <h2 class="text-[22px] genesis-text-gradient text-center md:text-[28px] lg:text-[36px]  my-8 xl:text-[52px]">
-              {{usedProject?.name}}</h2>
-            <div class="text-center mx-6 mt-6 text-[16px]" [innerHTML]="usedProject?.descripcion"></div>
-            }
+
             <app-project-info [projectDesc]="usedProject?.descripcion"
               [projectName]="usedProject?.name"></app-project-info>
           </div>
