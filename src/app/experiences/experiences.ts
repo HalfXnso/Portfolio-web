@@ -5,7 +5,7 @@ register();
 
 @Component({
   selector: 'app-experiences',
-  standalone: true, // Asegúrate de que esto esté si usas Angular 17+
+  standalone: true, 
   templateUrl: './experiences.html',
   styleUrl: './experiences.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

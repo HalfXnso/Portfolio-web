@@ -41,7 +41,7 @@ export class Projects implements OnInit {
       name: 'Scriptable Objects',
       src: './thumbnails/ScriptableObjects.png',
       background_class: 'pokemon-background',
-      descripcion: 'Proyecto hecho durante mi etapa formativa con el objetivo de explicar los Scriptable Objects de Unity',
+      descripcion: 'Proyecto realizado durante mi etapa formativa sobre una de las características de Unity. El objetivo era escoger un tema de los que nos ofrecían (en este caso Scriptable Objects), investigar sobre él y realizar un proyecto utilizando ese mismo tema para explicarlo a los demás compañeros.',
       url: 'dcESeDcvjyw',
       startTime: 0,
       techs: ['C#', 'Unity']
@@ -50,7 +50,7 @@ export class Projects implements OnInit {
       name: 'Voltpath v2',
       src: './in-progress.gif',
       background_class: 'in-progress',
-      descripcion: 'Voltpath v2 es la evolución individual del proyecto original, orientada a aprender y aplicar un <b>desarrollo full stack</b> más profesional. En el frontend estoy trabajando con <b>Angular 20</b> para construir una aplicación modular y mantenible, gestionando rutas, servicios y estado de la aplicación, además de la integración con mapas interactivos para el cálculo de rutas y paradas. En el backend estoy desarrollando una <b>API REST</b> con <b>Spring Boot</b>, enfocada en la gestión de usuarios, autenticación y persistencia de datos, aplicando buenas prácticas como separación por capas (controller, service, repository) y uso de JPA/Hibernate. El objetivo principal del proyecto es comprender el flujo completo entre frontend y backend, la protección de recursos mediante autenticación basada en tokens y el diseño de una arquitectura escalable sobre la que seguir incorporando funcionalidades.',
+      descripcion: 'Voltpath v2 es la evolución individual del proyecto original, orientada a aplicar un enfoque de <b>desarrollo full stack</b> más profesional. El frontend se desarrolla con <b>Angular 20</b>, construyendo una aplicación modular y mantenible mediante la gestión de rutas, servicios y estado de la aplicación, además de la integración de mapas interactivos para el cálculo de rutas y paradas.<p>En el backend se implementa una <b>API REST</b> con <b>Spring Boot</b>, centrada en la gestión de usuarios, autenticación y persistencia de datos, aplicando buenas prácticas como la separación por capas y el uso de <b>JPA/Hibernate</b>.</p><p><b>Objetivo principal:</b> comprender el flujo completo entre frontend y backend, la protección de recursos mediante autenticación basada en tokens y el diseño de una arquitectura escalable sobre la que seguir incorporando funcionalidades.</p>',
       url: 'MzEFeIRJ0eQ',
       startTime: 0,
       techs: ['Angular 18+', 'Spring Boot', 'PostgreSQL', 'Java', 'Html 5', 'Css 3', 'Tailwind css']
@@ -92,7 +92,6 @@ export class Projects implements OnInit {
         iv_load_policy: 3,
         modestbranding: 1
       },
-      // Opciones generales
       controls: [
         'play',
         'mute',
@@ -107,7 +106,6 @@ export class Projects implements OnInit {
   openModal(project: any) {
 
     this.usedProject = project;
-    // Para que Plyr detecte el nuevo vídeo
     setTimeout(() => {
       this.player.source = {
         type: 'video',
@@ -117,7 +115,6 @@ export class Projects implements OnInit {
       };
       this.updateUsedTechs(project);
       this.player.once('ready', () => {
-        // Ahora sí puedes establecer el tiempo
         this.player.currentTime = project.startTime;
         this.player.autoplay = true;
 
@@ -133,7 +130,7 @@ export class Projects implements OnInit {
 
   close() {
     this.player.muted = true;
-    this.player.stop(); // reinicia el vídeo
+    this.player.stop();
     this.modalRef.nativeElement.close();
   }
 
@@ -143,14 +140,11 @@ export class Projects implements OnInit {
 
     project.techs.forEach(techName => {
 
-      const tecnologia = this.techs.find(t => t.name === techName, console.log(techName, "GG"));
+      const tecnologia = this.techs.find(t => t.name === techName);
       if (tecnologia) {
         this.usedTechs.push(tecnologia.url);
-        console.log(this.usedTechs);
       }
-
     });
-    console.log(this.usedTechs);
 
   }
 

@@ -57,7 +57,6 @@ export class KnownTechs implements OnInit {
   closeModal() {
     this.usedTech = null;
     this.modalRef.nativeElement.close();
-    console.log(this.usedTech);
   }
 
   getTechs() {
