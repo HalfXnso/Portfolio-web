@@ -5,7 +5,7 @@ register();
 
 @Component({
   selector: 'app-experiences',
-  standalone: true, 
+  standalone: true,
   templateUrl: './experiences.html',
   styleUrl: './experiences.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -21,7 +21,7 @@ export class Experiences implements AfterViewInit {
       spaceBetween: 30,
       loop: true,
       autoplay: {
-        delay: 10000,
+        delay: 5000,
         disableOnInteraction: true,
       },
       pagination: {
