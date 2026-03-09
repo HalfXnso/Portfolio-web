@@ -68,6 +68,9 @@ export class AboutMe implements OnInit {
     {
       id: 11, name: 'Spring Boot', url: './techs/spring-boot.svg', tipo: 'Backend', value: 70, descripcion: '<b>Spring Boot</b> es el framework que utilizo para desarrollar APIs y aplicaciones backend en Java. He trabajado creando <b>APIs REST</b> con controllers, services y repositories, integrando <b>JPA/Hibernate</b> para la conexión a bases de datos y manejando la comunicación con frontend, principalmente Angular. También he implementado autenticación y seguridad básica en varios proyectos. Actualmente estoy aplicando los <b>principios de DDD y arquitectura Hexagonal</b> en proyectos en curso, organizando la aplicación en capas como <i>domain, application e infrastructure</i>, lo que me permite profundizar en buenas prácticas y mantener un código más limpio y escalable, aprovechando mi sólida base en Java y mi experiencia con Spring Boot.'
     },
+    {
+      id: 21, name: 'PHP', url: './techs/php.svg', tipo: 'Backend', value: 70, descripcion: '<b>PHP</b> es uno de los lenguajes que he utilizado en entorno profesional para el desarrollo y mantenimiento de aplicaciones web. He trabajado realizando modificaciones y mejoras en proyectos basados en <b>Magento 2</b>, implementando funcionalidades en PHP y gestionando configuraciones mediante <b>XML</b>. También he trabajado sobre arquitecturas basadas en <b>MVC</b> utilizando frameworks como <b>Phalcon</b>, desarrollando lógica de negocio, conectando con bases de datos y participando en la implementación de nuevas funcionalidades dentro del proyecto. Esta experiencia me ha permitido comprender mejor el funcionamiento de aplicaciones backend en producción y trabajar con código existente en entornos reales.'
+    },
 
     // DB
     {
